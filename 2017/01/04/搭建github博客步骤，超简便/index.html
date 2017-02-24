@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!-- Title -->
+    
+    <title>
+        使用Hexo搭建github博客步骤，超简便 | 高翔的博客
+    </title>
+    
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+    
+    <!-- Meta & INfo -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="高翔">
+    <meta name="description" content="null">
+    <meta name="keywords" content="高翔 博客">
+    
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+    
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="高翔的博客">
+    
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="使用Hexo搭建github博客步骤，超简便 | 高翔的博客">
+    <meta property="og:description" content="null">
+    
+     <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+        
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+    
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <link rel="stylesheet" href="/css/embed.default.css">
+    <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+	body, html{
+		font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+	}
+	
+    a{
+        color: #00838F
+    }
+    
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #0097A7 !important
+    }
+    
+	/* Sidebar User Drop Down Menu Text Color */
+	#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
+        color: #0097A7 !important
+    }
+    
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
+        color: #0097A7 !important
+    }
+    
+		
+	.material-layout .material-post>.material-nav,
+	.material-layout .material-index>.material-nav,
+	.material-nav a{
+		color: #FFFFFF;
+	}
+		
+	#scheme-Paradox .MD-burger-layer {
+		background-color: #FFFFFF;
+	}
+
+	#scheme-Paradox #post-toc-trigger-btn{
+		color: #FFFFFF;
+	}
+	
+	.post-toc a:hover{
+		color: #00838F;
+		text-decoration: underline;
+	}
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-image: url(/img/bg.jpg);
+        }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
+
+	<script src="/js/jquery.min.js"></script>
+	
+	<link rel="stylesheet" href="/css/highlight/solarized-white.css">
+	
+	<!-- UC Browser Compatible-->
+	<script>
+		var agent = navigator.userAgent.toLowerCase();
+		if(agent.indexOf('ucbrowser')>0) {
+			document.write('<link rel="stylesheet" href="/css/uc.css">');
+		   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+		}
+	</script>
+    
+    <!-- Custom Head -->
+    <!--  -->
+</head>
+	
+	
+
+    <body id="scheme-Paradox">
+
+		
+        <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+				
+			
+			
+            <!-- Main Container -->
+            <main class="material-layout__content" id="main">
+				
+                <!-- Top Anchor -->
+                <div id="top"></div>
+				
+				
+                <!-- Hamburger Button -->
+                <button class="MD-burger-icon sidebar-toggle">
+                    <span class="MD-burger-layer"></span>
+                </button>
+				
+				
+                <!-- Post TOC -->
+
+    
+	<!-- Back Button -->
+<!--
+	<div class="material-back" id="backhome-div" tabindex="0">
+		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
+			<i class="material-icons" role="presentation">arrow_back</i>
+			<span class="mdl-button__ripple-container">
+				<span class="mdl-ripple"></span>
+			</span>
+		</a>
+	</div>			
+-->
+	<!-- Left aligned menu below button -->
+	<button id="post-toc-trigger-btn"
+			class="mdl-button mdl-js-button mdl-button--icon">
+	  <i class="material-icons">format_list_numbered</i>
+	</button>
+
+	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+		for="post-toc-trigger-btn">
+			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#利用hexo搭建github博客很简单，甚至不需要编程的基础也可以完成，下面是我的博客成品的展示高翔的博客"><span class="post-toc-number">1.</span> <span class="post-toc-text">利用hexo搭建github博客很简单，甚至不需要编程的基础也可以完成，下面是我的博客成品的展示高翔的博客</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-准备工作"><span class="post-toc-number"></span> <span class="post-toc-text">1.准备工作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-使用Hexo搭建框架"><span class="post-toc-number"></span> <span class="post-toc-text">2.使用Hexo搭建框架</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-1-请使用命令行工具，执行下面命令安装Hexo"><span class="post-toc-number"></span> <span class="post-toc-text">2.1 请使用命令行工具，执行下面命令安装Hexo</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-2-在任意一个目录初始化Hexo项目"><span class="post-toc-number"></span> <span class="post-toc-text">2.2 在任意一个目录初始化Hexo项目</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-3接下来执行以下命令就可以在本地起服务"><span class="post-toc-number"></span> <span class="post-toc-text">2.3接下来执行以下命令就可以在本地起服务</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-发布一篇文章"><span class="post-toc-number"></span> <span class="post-toc-text">3 发布一篇文章</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#如上图："><span class="post-toc-number">1.</span> <span class="post-toc-text">如上图：</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-配置你的个性化博客主题"><span class="post-toc-number"></span> <span class="post-toc-text">4 配置你的个性化博客主题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-1在知乎上面的这个问题提供了很多精品主题"><span class="post-toc-number"></span> <span class="post-toc-text">4.1在知乎上面的这个问题提供了很多精品主题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-2-更改主题的配置文件"><span class="post-toc-number"></span> <span class="post-toc-text">4.2 更改主题的配置文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-部署到github"><span class="post-toc-number"></span> <span class="post-toc-text">5 部署到github</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-1-创建github博客项目"><span class="post-toc-number"></span> <span class="post-toc-text">5.1 创建github博客项目</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-2-配置里本地的项目与github连接"><span class="post-toc-number"></span> <span class="post-toc-text">5.2 配置里本地的项目与github连接</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-3-发布到github"><span class="post-toc-number"></span> <span class="post-toc-text">5.3 发布到github</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#现在，你的博客就已经可以在线进入了，地址为：-你的用户名-github-io"><span class="post-toc-number"></span> <span class="post-toc-text">现在，你的博客就已经可以在线进入了，地址为：[你的用户名].github.io</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-其他提醒"><span class="post-toc-number"></span> <span class="post-toc-text">6 其他提醒</span></a>
+		
+<!--			<li class="mdl-menu__item">Some Action</li>-->
+	</ul>
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+		
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+	<!-- Paradox Post Header -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+				<script>
+    
+    var randomNum;
+    randomNum = Math.floor(Math.random() * 12 + 1);
+    
+    $(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')');
+    
+</script>
+
+		
+	
+        <p class="article-headline-p">
+            使用Hexo搭建github博客步骤，超简便
+        </p>
+    </div>
+
+	
+
+				
+				
+					<!-- Paradox Post Info -->
+					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/logo.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>高翔</strong>
+        <span>1月 04, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+<!--
+    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+        <i class="material-icons" role="presentation">favorite</i>
+        <span class="visuallyhidden">favorites</span>
+    </button>
+-->
+
+    <!-- Qrcode -->
+    
+
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Windows/">Windows</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/git/">git</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/搭建博客/">搭建博客</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+
+    
+
+    
+      
+      <!-- Busuanzi Views -->
+      <a class="post_share-link" href="#">
+        <li class="mdl-menu__item">
+            <span id="busuanzi_container_page_pv">
+                <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+            </span>
+        </li>
+      </a>
+      
+    
+    
+    <!-- Share Weibo -->
+    
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=使用Hexo搭建github博客步骤，超简便&url=http://yoursite.com//2017/01/04/搭建github博客步骤，超简便/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <li class="mdl-menu__item">
+            分享到微博
+        </li>
+    </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+    <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=高翔的博客&title=使用Hexo搭建github博客步骤，超简便&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/01/04/搭建github博客步骤，超简便/index.html" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 QQ
+        </li>
+    </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+				
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+	
+		<p><strong>你只需要node环境和一个github账号就可以开工啦！</strong><br><a id="more"></a></p>
+<p><em>本教程适合于Windows环境，Mac教程也大同小异</em></p>
+<h6 id="利用hexo搭建github博客很简单，甚至不需要编程的基础也可以完成，下面是我的博客成品的展示高翔的博客"><a href="#利用hexo搭建github博客很简单，甚至不需要编程的基础也可以完成，下面是我的博客成品的展示高翔的博客" class="headerlink" title="利用hexo搭建github博客很简单，甚至不需要编程的基础也可以完成，下面是我的博客成品的展示高翔的博客"></a>利用hexo搭建github博客很简单，甚至不需要编程的基础也可以完成，下面是我的博客成品的展示<a href="https://gaoxianglyx.github.io/" target="_blank" rel="external">高翔的博客</a></h6><h3 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1.准备工作"></a>1.准备工作</h3><ul>
+<li>你的电脑需要配置node环境（包括npm）</li>
+<li>你需要有github账号和git基础（上传过项目）</li>
+<li>你的电脑需要安装了git工具（git Bash)</li>
+</ul>
+<p>ok,可以正式开始搭建了！</p>
+<h3 id="2-使用Hexo搭建框架"><a href="#2-使用Hexo搭建框架" class="headerlink" title="2.使用Hexo搭建框架"></a>2.使用Hexo搭建框架</h3><h5 id="2-1-请使用命令行工具，执行下面命令安装Hexo"><a href="#2-1-请使用命令行工具，执行下面命令安装Hexo" class="headerlink" title="2.1 请使用命令行工具，执行下面命令安装Hexo"></a>2.1 请使用命令行工具，执行下面命令安装Hexo</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo -g</div></pre></td></tr></table></figure>
+<h5 id="2-2-在任意一个目录初始化Hexo项目"><a href="#2-2-在任意一个目录初始化Hexo项目" class="headerlink" title="2.2 在任意一个目录初始化Hexo项目"></a>2.2 在任意一个目录初始化Hexo项目</h5><p>在任意一个目录下执行以下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure>
+<p>当你看到Start blogging with Hexo! 恭喜！框架就已经搭建好了</p>
+<h4 id="2-3接下来执行以下命令就可以在本地起服务"><a href="#2-3接下来执行以下命令就可以在本地起服务" class="headerlink" title="2.3接下来执行以下命令就可以在本地起服务"></a>2.3接下来执行以下命令就可以在本地起服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server</div></pre></td></tr></table></figure>
+<p>然后访问<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>，就能看到自己博客的雏形了</p>
+<h3 id="3-发布一篇文章"><a href="#3-发布一篇文章" class="headerlink" title="3 发布一篇文章"></a>3 发布一篇文章</h3><p>此时你的命令行正在起服务，按ctrl+c暂停服务，输入y确定。<br>用下面的代码来新建一篇文章</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new &quot;我的第一篇文章&quot;</div></pre></td></tr></table></figure>
+<p>然后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate</div></pre></td></tr></table></figure></p>
+<p><img src="http://ww4.sinaimg.cn/large/96ea1c33gw1fbfu9m2cmij20y009fdhf.jpg" alt="image"></p>
+<p>如图，双引号中间就是你的文章的名字，此时你再用hexo server起服务，就能看到自己的文章出现在页面中了</p>
+<hr>
+<p><img src="http://ww1.sinaimg.cn/large/96ea1c33gw1fbfucm9pt1j21310nb7aj.jpg" alt="image"></p>
+<p>但是现在文章只有一个标题，文章的文件是在你的目录的source_posts文件夹里面</p>
+<p>里面有个的第一篇文章.md就是记录你文章信息的markdown文件，你可以用markdown语法来编辑它</p>
+<blockquote>
+<p>这个.md文件用sublime或者写字本都可以打开编辑，现在也有很多可以实时预览的markdown编辑器，我使用的是有道云笔记，<a href="http://sspai.com/25137/" target="_blank" rel="external">了解更多关于markdown</a>。</p>
+</blockquote>
+<hr>
+<p><img src="http://ww4.sinaimg.cn/large/96ea1c33gw1fbfum3lft1j20jt05j74p.jpg" alt="image"></p>
+<h6 id="如上图："><a href="#如上图：" class="headerlink" title="如上图："></a>如上图：</h6><ol>
+<li>title表示文章标题</li>
+<li>tags：表示给文章添加的标签</li>
+<li><!-- more -->以上的内容会在文章列表页显示，点击进入文章页以后才会显示more下面的内容</li>
+</ol>
+<h3 id="4-配置你的个性化博客主题"><a href="#4-配置你的个性化博客主题" class="headerlink" title="4 配置你的个性化博客主题"></a>4 配置你的个性化博客主题</h3><h4 id="4-1在知乎上面的这个问题提供了很多精品主题"><a href="#4-1在知乎上面的这个问题提供了很多精品主题" class="headerlink" title="4.1在知乎上面的这个问题提供了很多精品主题"></a>4.1在知乎上面的这个问题提供了很多精品主题</h4><blockquote>
+<p><a href="https://www.zhihu.com/question/24422335" target="_blank" rel="external">有哪些好看的Hexo主题？</a></p>
+</blockquote>
+<p>选取你喜欢的clone或下载下来，放进你的项目目录的themes文件夹里面</p>
+<h4 id="4-2-更改主题的配置文件"><a href="#4-2-更改主题的配置文件" class="headerlink" title="4.2 更改主题的配置文件"></a>4.2 更改主题的配置文件</h4><p>首先打开项目根目录下的_config.yml文件</p>
+<p><strong>里面的每个键值对在冒号：后面都需要跟一个空格，请注意</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">title: 博客的名字</div><div class="line">description: 你的描述</div><div class="line">author: 作者名字</div><div class="line"></div><div class="line">themes：你的主题的文件夹的名字</div></pre></td></tr></table></figure>
+<p>一般来说这些需要更改，你可以根据英文自己理解修改</p>
+<p><strong>themes在最下面，把它的值改为你刚放进去的主题的名字</strong></p>
+<p>再在命令行执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line">hexo server</div></pre></td></tr></table></figure>
+<p>刷新就可以看到你的主题上线啦</p>
+<blockquote>
+<p>一般来说，主题的文件夹里面都还有一个_config.yml文件，来配置里主题可更改的信息</p>
+</blockquote>
+<h3 id="5-部署到github"><a href="#5-部署到github" class="headerlink" title="5 部署到github"></a>5 部署到github</h3><h4 id="5-1-创建github博客项目"><a href="#5-1-创建github博客项目" class="headerlink" title="5.1 创建github博客项目"></a>5.1 创建github博客项目</h4><p>你需要在你的github页面右上角你的头像旁边点击 + 号按钮，选择repository。</p>
+<p>在 Repository name 栏中，输入</p>
+<blockquote>
+<p>[你的用户名].github.io</p>
+</blockquote>
+<p>这个用户名必须和github用户名完全一样，如<a href="https://github.com/gaoxianglyx" target="_blank" rel="external">我的github</a><br>用户名为gaoxianglyx</p>
+<blockquote>
+<p>项目名为 gaoxianglyx.github.io</p>
+</blockquote>
+<h4 id="5-2-配置里本地的项目与github连接"><a href="#5-2-配置里本地的项目与github连接" class="headerlink" title="5.2 配置里本地的项目与github连接"></a>5.2 配置里本地的项目与github连接</h4><p>在你项目刚打开的_config.yml文件中，找到depoly，修改为如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: git@github.com:gaoxianglyx/gaoxianglyx.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p><strong>repository后面的值为你刚创建的项目的地址</strong></p>
+<h4 id="5-3-发布到github"><a href="#5-3-发布到github" class="headerlink" title="5.3 发布到github"></a>5.3 发布到github</h4><p>在命令行执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<p>安装完成后，使用以下命令便可以上传项目到github</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+<h3 id="现在，你的博客就已经可以在线进入了，地址为：-你的用户名-github-io"><a href="#现在，你的博客就已经可以在线进入了，地址为：-你的用户名-github-io" class="headerlink" title="现在，你的博客就已经可以在线进入了，地址为：[你的用户名].github.io"></a><strong>现在，你的博客就已经可以在线进入了，地址为：[你的用户名].github.io</strong></h3><h3 id="6-其他提醒"><a href="#6-其他提醒" class="headerlink" title="6 其他提醒"></a>6 其他提醒</h3><p>一般常用的hexo命令为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">hexo clean //清理（非必须），一般上传前线clean再generate</div><div class="line"></div><div class="line">hexo generate //将文章生成为博客的一部分，可简写为 hexo g</div><div class="line"></div><div class="line">hexo server //本地预览（非必须）， 可简写为 hexo s</div><div class="line"></div><div class="line">hexo deploy //推送到GitHub,可简写为 hexo d</div></pre></td></tr></table></figure>
+	
+	
+	
+	
+</div>
+				
+				
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+        <div class="ds-thread" 
+            data-thread-key="2017/01/04/搭建github博客步骤，超简便/" 
+            data-url="http://yoursite.com/2017/01/04/搭建github博客步骤，超简便/"
+            data-title="使用Hexo搭建github博客步骤，超简便"></div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    <!-- Prev Nav -->
+    
+        <a href="/2017/01/04/关于高翔/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/01/03/我的第一篇文章/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+        </div>
+    </div>
+
+				
+				
+					<!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay "></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored  sidebar-fixed-left" role="navigation">
+	<div id="sidebar-main">
+	    <!-- Sidebar Header -->
+		<div class="sidebar-header header-cover" style="background-image: url(/img/bg.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+    <i class="material-icons">clear_all</i>
+    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/logo.png" alt="高翔's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        gaoxiangno123@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+		<!-- Sidebar Navigation  -->
+		<ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+			
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+						<i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+             主页
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+<!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+-->
+
+
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             归档
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">6</span></a>
+        </ul>
+    </li>
+
+    <!-- Categories  -->
+    
+
+    <!-- Divider -->
+    <li class="divider"></li>
+
+
+    <!-- Pages  -->
+	
+		<li>
+			<a href="/about/" title="关于我">
+				关于我
+			</a>
+		</li>
+	
+		<li>
+			<a href="/gallery/" title="摄影集">
+				摄影集
+			</a>
+		</li>
+	
+
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+             文章总数
+             <span class="sidebar-badge">10</span>
+        </a>
+    </li>
+</ul>
+
+
+		<!-- Sidebar Divider -->
+		<div class="sidebar-divider"></div>
+
+		<!-- Sidebar Footer -->
+		<!-- 
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :) 
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+	<div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+		主题 - Material
+		<span class="sidebar-badge badge-circle">i</span>
+	</div>
+</a>
+
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+		sidebar.help
+		<span class="mdl-button__ripple-container">
+			<span class="mdl-ripple"></span>
+		</span>
+	</div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+	</div>
+    
+    <!-- Sidebar Sponsor -->
+    
+
+
+</aside>
+
+				
+				
+				
+					<!-- Footer Top Button -->
+					<div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+				
+				
+				<!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+	
+	
+		<!-- Paradox Footer Left Section -->
+		<div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+    
+
+    <!-- Facebook -->
+    
+    
+
+    <!-- Google + -->
+    
+    
+
+    <!-- Weibo -->
+    
+    <a href="http://weibo.com/gaoxiangz/home" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-weibo.png);">
+        <span class="visuallyhidden">Weibo</span>
+    </button></a>
+    
+
+    <!-- Instagram -->
+    
+    
+
+    <!-- Tumblr -->
+    
+    
+
+    <!-- Github -->
+    
+    <a href="https://github.com/gaoxianglyx" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+        <span class="visuallyhidden">Github</span>
+    </button></a>
+    
+
+    <!-- LinkedIn -->
+    
+    
+</div>
+
+
+		<!--Copyright-->
+		<div id="copyright">Copyright&nbsp;©&nbsp;<script type="text/javascript">var fd = new Date();document.write(fd.getFullYear());</script>&nbsp;高翔的博客</div>
+
+		<!-- Paradox Footer Right Section -->
+
+		<!-- 
+		I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+		It will not impact the appearance and can give developers a lot of support :)
+
+		很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+		它不会影响美观并可以给开发者很大的支持。 :) 
+		-->
+
+		<div class="mdl-mini-footer--right-section">
+			<div>
+				<div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+				<div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+			</div>
+		</div>
+	
+    
+</footer>
+                
+				<!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+    
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+	<script src="/js/smoothscroll.js"></script>
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"gaoxianglyx"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'https://duoshuo.open.zycao.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共 js 代码 end -->
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $(".post-toc-wrap").parent(".mdl-menu__container").css("position", "fixed");
+    });
+</script>
+
+<!-- MathJax Load-->
+
+            </main>
+        </div>
+		
+    </body>
+		
+	
+</html>
