@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        理解javascript中参数的按值传递 | 高翔的博客
+        HTTP缓存笔记 | 高翔的博客
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="理解javascript中参数的按值传递 | 高翔的博客">
+    <meta property="og:title" content="HTTP缓存笔记 | 高翔的博客">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -210,7 +210,7 @@
 	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 		for="post-toc-trigger-btn">
 			
-			<ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#javascript中所有参数是按值传递的"><span class="post-toc-number">1.</span> <span class="post-toc-text">javascript中所有参数是按值传递的</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#但是当传入的参数是引用类型时，便带来了疑惑"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">但是当传入的参数是引用类型时，便带来了疑惑</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#按值传递时怎么回事呢？"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">按值传递时怎么回事呢？</span></a></li></ol></li></ol>
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#HTTP缓存"><span class="post-toc-number">1.</span> <span class="post-toc-text">HTTP缓存</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用缓存有如下几个好处："><span class="post-toc-number">1.1.</span> <span class="post-toc-text">使用缓存有如下几个好处：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#缓存分类"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">缓存分类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-缓存的处理流程"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3.缓存的处理流程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#处理流程图，如上所示，下面分步骤具体介绍："><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">　　处理流程图，如上所示，下面分步骤具体介绍：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1）请求处理"><span class="post-toc-number">1.3.1.1.</span> <span class="post-toc-text">1）请求处理</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2）-新鲜度检测"><span class="post-toc-number">1.3.1.2.</span> <span class="post-toc-text">2） 新鲜度检测</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3）服务器再验证"><span class="post-toc-number">1.3.1.3.</span> <span class="post-toc-text">3）服务器再验证</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4）创建响应并返回"><span class="post-toc-number">1.3.1.4.</span> <span class="post-toc-text">　　4）创建响应并返回</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-保质期的实现"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">　　4.保质期的实现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-服务器再验证的实现"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">　　5.服务器再验证的实现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-试探性过期"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">　　6.试探性过期</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-返回状态码说明"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">　　7.返回状态码说明</span></a></li></ol></li></ol>
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
@@ -244,7 +244,7 @@
 		
 	
         <p class="article-headline-p">
-            理解javascript中参数的按值传递
+            HTTP缓存笔记
         </p>
     </div>
 
@@ -262,7 +262,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>高翔</strong>
-        <span>2月 20, 2017</span>
+        <span>2月 25, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -287,7 +287,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/JS/">JS</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/参数/">参数</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/数据类型/">数据类型</a>
+        <a class="post_tag-link" href="/tags/HTTP/">HTTP</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/笔记/">笔记</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/缓存/">缓存</a>
     </ul>
     
 
@@ -315,7 +315,7 @@
     
     <!-- Share Weibo -->
     
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=理解javascript中参数的按值传递&url=http://yoursite.com//2017/02/20/javascript中的按引用传递和按值传递/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=HTTP缓存笔记&url=http://yoursite.com//2017/02/25/HTTP缓存笔记/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -333,7 +333,7 @@
 
     <!-- Share QQ -->
     
-    <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=高翔的博客&title=理解javascript中参数的按值传递&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/02/20/javascript中的按引用传递和按值传递/index.html" target="_blank">
+    <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=高翔的博客&title=HTTP缓存笔记&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/02/25/HTTP缓存笔记/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 QQ
         </li>
@@ -351,19 +351,30 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<p><strong>有人认为 JS 中参数传递：基本数据类型按值传递；引用类型按引用传递。呵呵</strong><br><a id="more"></a></p>
-<h1 id="javascript中所有参数是按值传递的"><a href="#javascript中所有参数是按值传递的" class="headerlink" title="javascript中所有参数是按值传递的"></a>javascript中所有参数是按值传递的</h1><h2 id="但是当传入的参数是引用类型时，便带来了疑惑"><a href="#但是当传入的参数是引用类型时，便带来了疑惑" class="headerlink" title="但是当传入的参数是引用类型时，便带来了疑惑"></a>但是当传入的参数是引用类型时，便带来了疑惑</h2><blockquote>
-<p>引用类型值保存在内存中，而JS是不能直接访问内存的，所以对于引用类型，操作的不是实际的对象而是对象的引用。<br>如下是红宝石书P71的代码案例</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function setName (obj) &#123;</div><div class="line">    obj.name = &quot;xiang&quot;;</div><div class="line">&#125;</div><div class="line">var person = new Object ();</div><div class="line">setName(person);</div><div class="line">alert(person.name);//&quot;xiang&quot;</div></pre></td></tr></table></figure>
-<p>在函数内部对对象进行的操作，在函数外部能体现出来，说明传入的这个obj和person指向的是同一个在内存中的对象。这是否说明参数是按照引用传递，传入person时把这个对象传了进去，才会导致在函数内部修改对象，外部有效呢？请看接下来这个例子</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function setName (obj) &#123;</div><div class="line">    obj.name = &quot;xiang&quot;;</div><div class="line">    obj = new Object ();</div><div class="line">    obj.name = &quot;lyx&quot;;</div><div class="line">&#125;</div><div class="line">var person = new Object ();</div><div class="line">setName(person);</div><div class="line">alert(person.name);//&quot;xiang&quot;</div></pre></td></tr></table></figure>
-<p>如果是按照，person在函数内部就应该是被修改为指向一个name属性为lyx的新对象了。而在函数外部，person依然指向的是原来的对象（name属性为xiang）。所以引用类型的参数不是按照引用传递的。</p>
-<h2 id="按值传递时怎么回事呢？"><a href="#按值传递时怎么回事呢？" class="headerlink" title="按值传递时怎么回事呢？"></a>按值传递时怎么回事呢？</h2><blockquote>
-<p>引入一位知乎大神的图! </p>
-</blockquote>
-<p><img src="http://ww1.sinaimg.cn/large/96ea1c33gy1fd0q5jo8aej20lc0bnt95" alt="image"><br>如果时是按引用传递的话，是把第二格中的内容（也就是变量本身）整个传递进去（就不会有第四格的存在了）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function setName (obj) &#123;</div><div class="line">    obj.name = &quot;xiang&quot;;</div><div class="line">    obj = new Object ();</div><div class="line">    obj.name = &quot;lyx&quot;;</div><div class="line">&#125;</div><div class="line">var person = new Object ();</div><div class="line">setName(person);</div><div class="line">alert(person.name);//&quot;xiang&quot;</div></pre></td></tr></table></figure></p>
-<p>但事实是变量把它里面的值传递（复制）给了参数，让这个参数(obj)也指向原对象。因此如果在函数内部给这个参数赋值另一个对象时，这个参数就会更改它的值为新对象的内存地址指向新的对象，但此时原来的变量仍然指向原来的对象，这时候他们是相互独立的；但如果这个参数是改变对象内部的属性的话(obj.name = xiang)，这个改变会体现在外部，因为他们共同指向的这个对象被修改了 .</p>
+		<p><strong>网上笔记的摘抄，加上自己的理解</strong><br><a id="more"></a></p>
+<h1 id="HTTP缓存"><a href="#HTTP缓存" class="headerlink" title="HTTP缓存"></a>HTTP缓存</h1><h2 id="使用缓存有如下几个好处："><a href="#使用缓存有如下几个好处：" class="headerlink" title="使用缓存有如下几个好处："></a>使用缓存有如下几个好处：</h2><ul>
+<li>缓存减少了冗余的数据传输， 节省了你的网络费用。 （将每次传送的相同的直接缓存起来）</li>
+<li>缓存缓解了网络瓶颈的问题。 不需要更多的带宽就能够更快地加载页面。 （这是当然）</li>
+<li>缓存降低了对原始服务器的要求。 服务器可以更快地响应，避免过载的出现。 </li>
+<li>缓存降低了距离时延， 因为从较远的地方加载页面会更慢一些。</li>
+</ul>
+<h2 id="缓存分类"><a href="#缓存分类" class="headerlink" title="缓存分类"></a>缓存分类</h2><p>　　1）私有缓存<br>　　常见就是我们的浏览器里内置的缓存。</p>
+<p>　　2）公有缓存<br>　　常见的就是代理缓存，不多介绍。
+　　</p>
+<h2 id="3-缓存的处理流程"><a href="#3-缓存的处理流程" class="headerlink" title="3.缓存的处理流程"></a>3.缓存的处理流程</h2><p><img src="http://ww1.sinaimg.cn/large/96ea1c33gy1fd2qzs3nwdj20gu0db74o" alt="image"></p>
+<h3 id="处理流程图，如上所示，下面分步骤具体介绍："><a href="#处理流程图，如上所示，下面分步骤具体介绍：" class="headerlink" title="　　处理流程图，如上所示，下面分步骤具体介绍："></a>　　处理流程图，如上所示，下面分步骤具体介绍：</h3><h4 id="1）请求处理"><a href="#1）请求处理" class="headerlink" title="1）请求处理"></a>1）请求处理</h4><p>　　用户发起一个http请求，缓存获取到URL，根据URL查找是否有匹配的副本，这个副本可能在内存中，也可能在本地磁盘。  </p>
+<h4 id="2）-新鲜度检测"><a href="#2）-新鲜度检测" class="headerlink" title="2） 新鲜度检测"></a>2） 新鲜度检测</h4><p>　　如果缓存中存在所请求资源的副本，则进行新鲜度检测。HTTP发起一个请求时，发现缓存中有相应的副本，接着就会检查这个副本有没有过期，如果没有过期，直接使用。如果已经过期，则进行再验证。具体的实现在下面会介绍。  </p>
+<h4 id="3）服务器再验证"><a href="#3）服务器再验证" class="headerlink" title="3）服务器再验证"></a>3）服务器再验证</h4><p>　　缓存中的文档过期了并不代表他和服务器上的不一样，所以这个时候就需要问问服务器，过期的这段时间里这个文档到底有没有改变。如果改变了，缓存就会获取一份新的文档副本，然后发送给客户端。如果没有改变，缓存只需要获取新的首部，包括一个新的过期时间，并对缓存中的首部更新。</p>
+<h4 id="4）创建响应并返回"><a href="#4）创建响应并返回" class="headerlink" title="　　4）创建响应并返回"></a>　　4）创建响应并返回</h4><p>　　我们希望缓存看起来就像是来自原始服务器一样，缓存将已缓存的服务器响应首部作为响应首部，发送给客户端。</p>
+<h2 id="4-保质期的实现"><a href="#4-保质期的实现" class="headerlink" title="　　4.保质期的实现"></a>　　4.保质期的实现</h2><p>　　HTTP中，通过Cache-Control首部和Expires首部为文档指定了过期时间，通过对过期时间的判断，缓存就可以知道文档是不是在保质期内。Expires首部和Cache-Control:max-age首部都是来告诉缓存文档有没有过期，<br>　　HTTP 1.1为了修正这个问题，引入了Cache-Control:max-age首部，这个首部使用相对时间来控制保质期，让一切变得更加合理。</p>
+<h2 id="5-服务器再验证的实现"><a href="#5-服务器再验证的实现" class="headerlink" title="　　5.服务器再验证的实现"></a>　　5.服务器再验证的实现</h2><p>　　缓存要问问服务器。HTTP中，使用两个请求请首部来完成这个功能：If-Modified-Sice和If-None-Match。为啥又要两个首部来完成这个功能了？答案还是因为历史的原因。一开始使用 If-Modified-Sice:<date>首部，date是上一次缓存牛奶时，响应中Last-Modified首部的值。<br>　　客户端拿着这个值，问服务器，这段时间内这个牛奶你有没有修改过？服务器看了看这个牛奶的修改时间，如果没有修改过，会返回一个304 Not Modified的响应；如果修改过，把最新的牛奶返回给客户端。后来，人们发现这样有问题，因为就算修改时间变化了，文档也不一定发生改变！于是乎，就有了 If-None-Match:<tag>首部，tag是上一次缓存文档时，响应中Etag的值，Etag是一种唯一标识资源的方式，就像java中的hashcode，如果hashcode不一样，那么两个对象肯定不一样！</tag></date></p>
+<h2 id="6-试探性过期"><a href="#6-试探性过期" class="headerlink" title="　　6.试探性过期"></a>　　6.试探性过期</h2><p>　　如果响应中既没有Cache-Control:max-age首部又没有Expires首部，缓存可以计算出一个试探性最大使用期。这东西打个比方就是缓存会根据响应的Last-Modified来决定这文档靠不靠谱，需不需要再验证，如果Last-Modified中的日期是很早之前，那缓存就认为这文档挺靠谱，近期之内应该不会变化；如果Last-Modified中的日期是最近几天，那缓存可能就认为这文档可能经常改变，不靠谱。当然这么粗略的判断想想就知道不严谨，所以我们一定要设置Expires首部和Cache-Control首部。</p>
+<ul>
+<li>Expires:绝对过期时间，优先级低，快被淘汰了，因为根据服务器的时间会有差异</li>
+<li>Cache-Control:相对过期时间</li>
+<li>Last-Modified：最后更改时间，但是有些周期性更新，实际资源没有更改，所有引入Etag</li>
+<li>Etag：标识版本，如果资源没有变化，就不会改变版本<h2 id="7-返回状态码说明"><a href="#7-返回状态码说明" class="headerlink" title="　　7.返回状态码说明"></a>　　7.返回状态码说明</h2><img src="http://ww1.sinaimg.cn/large/96ea1c33gy1fd2r1kj9xbj20jz0dpdhn" alt="image"></li>
+</ul>
 
 	
 	
@@ -392,9 +403,9 @@
 <div id="comments">
     <!-- 多说评论框 start -->
         <div class="ds-thread" 
-            data-thread-key="2017/02/20/javascript中的按引用传递和按值传递/" 
-            data-url="http://yoursite.com/2017/02/20/javascript中的按引用传递和按值传递/"
-            data-title="理解javascript中参数的按值传递"></div>
+            data-thread-key="2017/02/25/HTTP缓存笔记/" 
+            data-url="http://yoursite.com/2017/02/25/HTTP缓存笔记/"
+            data-title="HTTP缓存笔记"></div>
     <!-- 多说评论框 end -->
 </div>
 
@@ -408,21 +419,13 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2017/02/21/HTML5的History Api/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/02/10/javascript的MVC框架的理解/" id="post_nav-older" class="next-content">
+        <a href="/2017/02/21/HTML5的History Api/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
