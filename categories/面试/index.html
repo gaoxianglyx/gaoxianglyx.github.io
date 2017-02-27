@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        HTML5的History Api | 高翔的博客
+        分类: 面试 | 高翔的博客
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="HTML5的History Api | 高翔的博客">
+    <meta property="og:title" content="分类: 面试 | 高翔的博客">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -187,263 +187,98 @@
                 </button>
 				
 				
-                <!-- Post TOC -->
-
+                <!-- Index Module -->
+<div class="material-index mdl-grid">
+	
+    <div class="locate-thumbnail-symbol"></div>
     
-	<!-- Back Button -->
-<!--
-	<div class="material-back" id="backhome-div" tabindex="0">
-		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
-			<i class="material-icons" role="presentation">arrow_back</i>
-			<span class="mdl-button__ripple-container">
-				<span class="mdl-ripple"></span>
-			</span>
-		</a>
-	</div>			
--->
-	<!-- Left aligned menu below button -->
-	<button id="post-toc-trigger-btn"
-			class="mdl-button mdl-js-button mdl-button--icon">
-	  <i class="material-icons">format_list_numbered</i>
-	</button>
-
-	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-		for="post-toc-trigger-btn">
-			
-			<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#History-Api的兼容性"><span class="post-toc-number">1.</span> <span class="post-toc-text">History Api的兼容性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#History-Api中的方法和事件"><span class="post-toc-number">2.</span> <span class="post-toc-text">History Api中的方法和事件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#pushState和replaceState方法"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">pushState和replaceState方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如同"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">如同</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#不同点"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">不同点</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#popstate-事件"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">popstate 事件</span></a></li></ol></li></ol>
+    
 		
-<!--			<li class="mdl-menu__item">Some Action</li>-->
-	</ul>
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-		
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-	<!-- Paradox Post Header -->
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
 	
 		
 			<!-- Random Thumbnail -->
 			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-				<script>
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2017/02/27/扇贝面试题及体会/">扇贝面试题及体会</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            58分钟算持久吗？
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/02/27/扇贝面试题及体会/" target="_self">继续阅读</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/logo.png" width="44px" height="44px" alt="高翔's avatar">
+            </div>
+            <div>
+                <strong>高翔</strong>
+                <span>2月 27, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/面试/">面试</a>
+            </span>
+            
+            
+                <!-- Comment Number -->
+                &nbsp;|&nbsp;
+                <span class="post_entry-comment" >
+                        <span class="ds-thread-count" data-thread-key="2017/02/27/扇贝面试题及体会/" data-count-type="comments"></span>
+                </span>
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+    
+	
+		<script>
     
     var randomNum;
-    randomNum = Math.floor(Math.random() * 12 + 1);
     
-    $(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')');
+    var locatePost = $(".locate-thumbnail-symbol").next();
+    for(var i=0; i < 5; i++){
+        
+        randomNum = Math.floor(Math.random() * 12 + 1);
+        
+        locatePost.children(".post_thumbnail-random").attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')')
+        
+        locatePost = locatePost.next();
+    }
     
 </script>
 
-		
 	
-        <p class="article-headline-p">
-            HTML5的History Api
-        </p>
-    </div>
-
-	
-
-				
-				
-					<!-- Paradox Post Info -->
-					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/logo.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>高翔</strong>
-        <span>2月 21, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-<!--
-    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-        <i class="material-icons" role="presentation">favorite</i>
-        <span class="visuallyhidden">favorites</span>
-    </button>
--->
-
-    <!-- Qrcode -->
-    
-
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/HTML5/">HTML5</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/url/">url</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/浏览器/">浏览器</a>
-    </ul>
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-
-    
-
-    
-      
-      <!-- Busuanzi Views -->
-      <a class="post_share-link" href="#">
-        <li class="mdl-menu__item">
-            <span id="busuanzi_container_page_pv">
-                <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
-            </span>
-        </li>
-      </a>
-      
-    
-    
-    <!-- Share Weibo -->
-    
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=HTML5的History Api&url=http://yoursite.com//2017/02/21/HTML5的History Api/index.html&pic=&searchPic=false&style=simple" target="_blank">
-        <li class="mdl-menu__item">
-            分享到微博
-        </li>
-    </a>
-    
-
-    <!-- Share Twitter -->
-    
-
-    <!-- Share Google+ -->
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-    <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=高翔的博客&title=HTML5的History Api&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/02/21/HTML5的History Api/index.html" target="_blank">
-        <li class="mdl-menu__item">
-            分享到 QQ
-        </li>
-    </a>
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
 
 </div>
-
-				
-
-                <!-- Post Content -->
-                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-	
-		<p><strong>如果你想要不刷新整个页面而又改变url。。。</strong><br><a id="more"></a></p>
-<p>使用单页应用时，我们通常需要不刷新整个页面，只局部更新内容，并改变相应url。在HTML5引入的新<strong>Api History</strong> 便能实现这个功能</p>
-<h2 id="History-Api的兼容性"><a href="#History-Api的兼容性" class="headerlink" title="History Api的兼容性"></a>History Api的兼容性</h2><p>到目前为止，IE10，Firefox4以上的版本，Chrome8以上的版本，Safari5，Opera11以上的版本的浏览器都支持了这个Api</p>
-<blockquote>
-<p>你可以通过下面的方法来检测浏览器是否支持History Api</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">return !!(window.history &amp;&amp; history.pushState);</div></pre></td></tr></table></figure>
-<h2 id="History-Api中的方法和事件"><a href="#History-Api中的方法和事件" class="headerlink" title="History Api中的方法和事件"></a>History Api中的方法和事件</h2><h3 id="pushState和replaceState方法"><a href="#pushState和replaceState方法" class="headerlink" title="pushState和replaceState方法"></a>pushState和replaceState方法</h3><p> pushState()和replaceState()参数一样，参数说明如下：</p>
-<ol>
-<li>state：存储JSON字符串，可以用在popstate事件中。</li>
-<li>title：现在大多数浏览器不支持或者忽略这个参数，<strong>最好用null代替</strong></li>
-<li>url：任意有效的URL，用于更新浏览器的地址栏，并不在乎URL是否已经存在地址列表中。<strong>更重要的是，它不会重新加载页面</strong>。</li>
-</ol>
-<h4 id="如同"><a href="#如同" class="headerlink" title="如同"></a>如同</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.history.pushState(null, null, &quot;/profile/&quot;);</div></pre></td></tr></table></figure>
-<p>之后，地址栏的地址就会变成gaoxiangltx.top/profile/，但同时浏览器不会刷新页面，甚至不会检测目标页面是否存在。这就提供了一种「人为操纵」浏览器历史记录的方法。</p>
-<hr>
-<h4 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h4><p>“window.history.replaceState”和”window.history.pushState”类似，不同之处在于replaceState不会在window.history里新增历史记录点，其效果类似于window.location.replace(url)，都是不会在历史记录点里新增一个记录点的。当你为了响应用户的某些操作，而要更新当前历史记录条目的状态对象或URL时，使用replaceState()方法会特别合适。如下图</p>
-<p><img src="http://ww1.sinaimg.cn/large/96ea1c33gy1fczkcjvtggj20du08xjs1" alt="image"></p>
-<p>而第一个参数state是一个对象或者字符串，用于描述新记录的一些特性。这个参数会被一并添加到历史记录中，以供以后使用。这个参数是开发者根据自己的需要自由给出的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var state = &#123;</div><div class="line">    id: gaoxiang,</div><div class="line">    name: &quot;profile&quot;</div><div class="line">&#125;;</div><div class="line">window.history.pushState(state, &quot;null&quot;, &quot;/profile/&quot;);</div></pre></td></tr></table></figure>
-<h3 id="popstate-事件"><a href="#popstate-事件" class="headerlink" title="popstate 事件"></a>popstate 事件</h3><p>当用户点击浏览器的「前进」、「后退」按钮时，就会触发popstate事件。你可以监听这一事件，从而作出反应。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">window.addEventListener(&quot;popstate&quot;, function(e) &#123;</div><div class="line">    var state = e.state;</div><div class="line">    // do something...</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>这里e.state就是当初pushState时传入的第一个参数。例如，在我们的例子中，有：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">e.state.id == 高翔;</div><div class="line">e.state.name == &quot;profile&quot;;</div></pre></td></tr></table></figure>
-
-	
-	
-	
-	
-</div>
-				
-				
-
-                <!-- Post Comments -->
-                
-                    
-    <!-- 使用多说评论 -->
-    <link rel="stylesheet" href="/css/duoshuo.min.css">
-<style>
-    #ds-thread #ds-reset .ds-post-button{
-        background-color: #0097A7 !important;
-    }
-    #ds-wrapper #ds-reset .ds-icons-32{
-        background-color: #0097A7 !important;
-    }
-    #ds-reset .ds-highlight {
-        color: #0097A7 !important;
-    }
-</style>
-<div id="comments">
-    <!-- 多说评论框 start -->
-        <div class="ds-thread" 
-            data-thread-key="2017/02/21/HTML5的History Api/" 
-            data-url="http://yoursite.com/2017/02/21/HTML5的History Api/"
-            data-title="HTML5的History Api"></div>
-    <!-- 多说评论框 end -->
-</div>
-
-
-
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    
-    <!-- Prev Nav -->
-    
-        <a href="/2017/02/25/HTTP缓存笔记/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/2017/02/20/javascript中的按引用传递和按值传递/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-        </div>
-    </div>
 
 				
 				
