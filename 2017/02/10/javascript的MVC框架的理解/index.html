@@ -363,9 +363,9 @@
 <li>存储器（Model）取出来这张照片后，屏幕（View）上便显示出来</li>
 </ol>
 <h3 id="对比MVC和MVVM"><a href="#对比MVC和MVVM" class="headerlink" title="对比MVC和MVVM"></a>对比MVC和MVVM</h3><ul>
-<li>MVC：View（界面）触发事件–》Controller（业务）处理了业务，然后触发了数据更新–》不知道谁更新了Model的数据–》Model（带着数据）回到了View–》View更新数据<ul>
-<li>Controller: 把view的每个变化视作事件，然后给每个事件定义对数据的操作，使model层数据变化</li>
-<li>MVVM：ViewModel大致是Controller的作用，但是它是双向数据流，完全解耦M和V层，<br>-ViewModel层把view上每个控件视作一个对象，在ViewModel上定义和控件数据绑定的数据对象以及对此数据对象的操作方法<br>以数据绑定的方式进行数据更新，改变view或改变model层数据，都能改变这个数据对象，双向绑定，互相影响</li>
+<li>MVC：View（界面）触发事件–》Controller（业务）处理了业务，然后触发了数据更新–》不知道谁更新了Model的数据–》Model（带着数据）回到了View–》View更新数据  <ul>
+<li>Controller: 把view的每个变化视作事件，然后给每个事件定义对数据的操作，使model层数据变化  </li>
+<li>MVVM：ViewModel大致是Controller的作用，但是它是双向数据流，完全解耦M和V层<br>-ViewModel层把view上每个控件视作一个对象，在ViewModel上定义和控件数据绑定的数据对象以及对此数据对象的操作方法<br>以数据绑定的方式进行数据更新，改变view或改变model层数据，都能改变这个数据对象，双向绑定，互相影响</li>
 </ul>
 </li>
 </ul>
