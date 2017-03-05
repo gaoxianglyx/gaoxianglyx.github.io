@@ -210,7 +210,7 @@
 	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 		for="post-toc-trigger-btn">
 			
-			<ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#TCP连接"><span class="post-toc-number">1.</span> <span class="post-toc-text">TCP连接</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三次握手"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">三次握手</span></a></li></ol></li></ol>
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#TCP连接"><span class="post-toc-number">1.</span> <span class="post-toc-text">TCP连接</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三次握手"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">三次握手</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#四次挥手"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">四次挥手</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#为什么握手要三次，挥手要四次？？"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">为什么握手要三次，挥手要四次？？</span></a></li></ol></li></ol>
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
@@ -358,12 +358,10 @@
 <li>ACK——标志位 ： TCP协议规定，只有ACK=1时有效，也规定连接建立后所有发送的报文的ACK必须为1</li>
 <li>SYN——标志位 ： 在连接建立时用来同步序号。当SYN=1而ACK=0时，表明这是一个连接请求报文。对方若同意建立连接，则应在响应报文中使SYN=1和ACK=1. 因此,  SYN置1就表示这是一个连接请求或连接接受报文。<br><img src="http://ww1.sinaimg.cn/large/96ea1c33gy1fdby3vacv3j20hf0bg0vj" alt="image"></li>
 </ul>
-<p>##四次挥手</p>
-<ul>
+<h2 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h2><ul>
 <li>FIN （finis）即完，终结的意思， 用来释放一个连接。当 FIN = 1 时，表明此报文段的发送方的数据已经发送完毕，并要求释放连接<br><img src="http://ww1.sinaimg.cn/large/96ea1c33gy1fdby4qhwlej20e308zweh" alt="image"></li>
 </ul>
-<p>##为什么握手要三次，挥手要四次？？</p>
-<ul>
+<h2 id="为什么握手要三次，挥手要四次？？"><a href="#为什么握手要三次，挥手要四次？？" class="headerlink" title="为什么握手要三次，挥手要四次？？"></a>为什么握手要三次，挥手要四次？？</h2><ul>
 <li>建立连接前需要双方证明自己有接收和发送数据的能力，</li>
 <li>关闭连接前，fin表示不再发送数据，但是可能还有没有完成发送的数据，所以FIN和ACK要分开发送</li>
 </ul>
