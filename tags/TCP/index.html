@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        Javascript的MVC框架的理解 | 高翔的博客
+        标签: TCP | 高翔的博客
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Javascript的MVC框架的理解 | 高翔的博客">
+    <meta property="og:title" content="标签: TCP | 高翔的博客">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -187,258 +187,98 @@
                 </button>
 				
 				
-                <!-- Post TOC -->
-
+                <!-- Index Module -->
+<div class="material-index mdl-grid">
+	
+    <div class="locate-thumbnail-symbol"></div>
     
-	<!-- Back Button -->
-<!--
-	<div class="material-back" id="backhome-div" tabindex="0">
-		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
-			<i class="material-icons" role="presentation">arrow_back</i>
-			<span class="mdl-button__ripple-container">
-				<span class="mdl-ripple"></span>
-			</span>
-		</a>
-	</div>			
--->
-	<!-- Left aligned menu below button -->
-	<button id="post-toc-trigger-btn"
-			class="mdl-button mdl-js-button mdl-button--icon">
-	  <i class="material-icons">format_list_numbered</i>
-	</button>
-
-	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-		for="post-toc-trigger-btn">
-			
-			<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MVC模式是软件工程中一种软件架构模式，一般把软件模式分为三部分，模型-Model-视图-View-控制器-Controller"><span class="post-toc-number">1.</span> <span class="post-toc-text">MVC模式是软件工程中一种软件架构模式，一般把软件模式分为三部分，模型(Model)+视图(View)+控制器(Controller);</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#当你用手机查看一张你拍的照片的时候："><span class="post-toc-number">1.1.</span> <span class="post-toc-text">当你用手机查看一张你拍的照片的时候：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对比MVC和MVVM"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">对比MVC和MVVM</span></a></li></ol></li></ol>
+    
 		
-<!--			<li class="mdl-menu__item">Some Action</li>-->
-	</ul>
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-		
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-	<!-- Paradox Post Header -->
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
 	
 		
 			<!-- Random Thumbnail -->
 			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-				<script>
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2017/03/05/三次握手和四次挥手简单笔记/">三次握手和四次挥手简单笔记</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            最简单的笔记。。。
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/03/05/三次握手和四次挥手简单笔记/" target="_self">继续阅读</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/logo.png" width="44px" height="44px" alt="高翔's avatar">
+            </div>
+            <div>
+                <strong>高翔</strong>
+                <span>3月 05, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/笔记/">笔记</a>
+            </span>
+            
+            
+                <!-- Comment Number -->
+                &nbsp;|&nbsp;
+                <span class="post_entry-comment" >
+                        <span class="ds-thread-count" data-thread-key="2017/03/05/三次握手和四次挥手简单笔记/" data-count-type="comments"></span>
+                </span>
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+    
+	
+		<script>
     
     var randomNum;
-    randomNum = Math.floor(Math.random() * 12 + 1);
     
-    $(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')');
+    var locatePost = $(".locate-thumbnail-symbol").next();
+    for(var i=0; i < 5; i++){
+        
+        randomNum = Math.floor(Math.random() * 12 + 1);
+        
+        locatePost.children(".post_thumbnail-random").attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')')
+        
+        locatePost = locatePost.next();
+    }
     
 </script>
 
-		
 	
-        <p class="article-headline-p">
-            Javascript的MVC框架的理解
-        </p>
-    </div>
-
-	
-
-				
-				
-					<!-- Paradox Post Info -->
-					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/logo.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>高翔</strong>
-        <span>2月 10, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-<!--
-    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-        <i class="material-icons" role="presentation">favorite</i>
-        <span class="visuallyhidden">favorites</span>
-    </button>
--->
-
-    <!-- Qrcode -->
-    
-
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/JS/">JS</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/MVC/">MVC</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/模式/">模式</a>
-    </ul>
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-
-    
-
-    
-      
-      <!-- Busuanzi Views -->
-      <a class="post_share-link" href="#">
-        <li class="mdl-menu__item">
-            <span id="busuanzi_container_page_pv">
-                <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
-            </span>
-        </li>
-      </a>
-      
-    
-    
-    <!-- Share Weibo -->
-    
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Javascript的MVC框架的理解&url=http://yoursite.com//2017/02/10/javascript的MVC框架的理解/index.html&pic=&searchPic=false&style=simple" target="_blank">
-        <li class="mdl-menu__item">
-            分享到微博
-        </li>
-    </a>
-    
-
-    <!-- Share Twitter -->
-    
-
-    <!-- Share Google+ -->
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-    <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=高翔的博客&title=Javascript的MVC框架的理解&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/02/10/javascript的MVC框架的理解/index.html" target="_blank">
-        <li class="mdl-menu__item">
-            分享到 QQ
-        </li>
-    </a>
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
 
 </div>
-
-				
-
-                <!-- Post Content -->
-                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-	
-		<p><strong>MVC模式是架构模式的一种，它不仅适用于开发软件，也适用于其他广泛的设计和组织工作</strong><br><a id="more"></a></p>
-<h2 id="MVC模式是软件工程中一种软件架构模式，一般把软件模式分为三部分，模型-Model-视图-View-控制器-Controller"><a href="#MVC模式是软件工程中一种软件架构模式，一般把软件模式分为三部分，模型-Model-视图-View-控制器-Controller" class="headerlink" title="MVC模式是软件工程中一种软件架构模式，一般把软件模式分为三部分，模型(Model)+视图(View)+控制器(Controller);"></a>MVC模式是软件工程中一种软件架构模式，一般把软件模式分为三部分，模型(Model)+视图(View)+控制器(Controller);</h2><p>模型：模型用于封装与应用程序的业务逻辑相关的数据以及对数据处理的方法。模型有对数据直接访问的权利。模型不依赖 “视图” 和 “控制器”, 也就是说 模型它不关心页面如何显示及如何被操作.</p>
-<p>视图：视图层最主要的是监听模型层上的数据改变，并且实时的更新html页面。当然也包括一些事件的注册或者ajax请求操作(发布事件),都是放在视图层来完成。</p>
-<p>控制器：控制器接收用户的操作，最主要是订阅视图层的事件，然后调用模型或视图去完成用户的操作;比如：当页面上触发一个事件，控制器不输出任何东西及对页面做任何处理; 它只是接收请求并决定调用模型中的那个方法去处理请求, 然后再确定调用那个视图中的方法来显示返回的数据</p>
-<p><img src="http://image.beekka.com/blog/2015/bg2015020105.png" alt="image"></p>
-<h3 id="当你用手机查看一张你拍的照片的时候："><a href="#当你用手机查看一张你拍的照片的时候：" class="headerlink" title="当你用手机查看一张你拍的照片的时候："></a>当你用手机查看一张你拍的照片的时候：</h3><ol>
-<li>你的手点击屏幕（视图层View）上你想打开的那张照片</li>
-<li>你手机的操作系统（控制层Controller）便会接收到你点击的这个事件，发出读取这张照片的指令</li>
-<li>你手机的存储器（模型Model）收到读取的指令，便把这张照片从储存中取出来</li>
-<li>存储器（Model）取出来这张照片后，屏幕（View）上便显示出来</li>
-</ol>
-<h3 id="对比MVC和MVVM"><a href="#对比MVC和MVVM" class="headerlink" title="对比MVC和MVVM"></a>对比MVC和MVVM</h3><ul>
-<li>MVC：View（界面）触发事件–》Controller（业务）处理了业务，然后触发了数据更新–》不知道谁更新了Model的数据–》Model（带着数据）回到了View–》View更新数据  <ul>
-<li>Controller: 把view的每个变化视作事件，然后给每个事件定义对数据的操作，使model层数据变化  </li>
-<li>MVVM：ViewModel大致是Controller的作用，但是它是双向数据流，完全解耦M和V层<br>-ViewModel层把view上每个控件视作一个对象，在ViewModel上定义和控件数据绑定的数据对象以及对此数据对象的操作方法<br>以数据绑定的方式进行数据更新，改变view或改变model层数据，都能改变这个数据对象，双向绑定，互相影响</li>
-</ul>
-</li>
-</ul>
-<p>待更新代码</p>
-
-	
-	
-	
-	
-</div>
-				
-				
-
-                <!-- Post Comments -->
-                
-                    
-    <!-- 使用多说评论 -->
-    <link rel="stylesheet" href="/css/duoshuo.min.css">
-<style>
-    #ds-thread #ds-reset .ds-post-button{
-        background-color: #0097A7 !important;
-    }
-    #ds-wrapper #ds-reset .ds-icons-32{
-        background-color: #0097A7 !important;
-    }
-    #ds-reset .ds-highlight {
-        color: #0097A7 !important;
-    }
-</style>
-<div id="comments">
-    <!-- 多说评论框 start -->
-        <div class="ds-thread" 
-            data-thread-key="2017/02/10/javascript的MVC框架的理解/" 
-            data-url="http://yoursite.com/2017/02/10/javascript的MVC框架的理解/"
-            data-title="Javascript的MVC框架的理解"></div>
-    <!-- 多说评论框 end -->
-</div>
-
-
-
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    
-    <!-- Prev Nav -->
-    
-        <a href="/2017/02/20/javascript中的按引用传递和按值传递/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/2017/02/10/对Node.JS的事件轮询(Event Loop)的理解/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-        </div>
-    </div>
 
 				
 				
@@ -611,13 +451,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 				
 				
-				
-					<!-- Footer Top Button -->
-					<div class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
 				
 				
 				<!--Footer-->

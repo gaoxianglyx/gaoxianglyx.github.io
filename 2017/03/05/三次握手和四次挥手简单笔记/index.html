@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        Javascript的MVC框架的理解 | 高翔的博客
+        三次握手和四次挥手简单笔记 | 高翔的博客
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Javascript的MVC框架的理解 | 高翔的博客">
+    <meta property="og:title" content="三次握手和四次挥手简单笔记 | 高翔的博客">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -210,7 +210,7 @@
 	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 		for="post-toc-trigger-btn">
 			
-			<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MVC模式是软件工程中一种软件架构模式，一般把软件模式分为三部分，模型-Model-视图-View-控制器-Controller"><span class="post-toc-number">1.</span> <span class="post-toc-text">MVC模式是软件工程中一种软件架构模式，一般把软件模式分为三部分，模型(Model)+视图(View)+控制器(Controller);</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#当你用手机查看一张你拍的照片的时候："><span class="post-toc-number">1.1.</span> <span class="post-toc-text">当你用手机查看一张你拍的照片的时候：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对比MVC和MVVM"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">对比MVC和MVVM</span></a></li></ol></li></ol>
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#TCP连接"><span class="post-toc-number">1.</span> <span class="post-toc-text">TCP连接</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三次握手"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">三次握手</span></a></li></ol></li></ol>
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
@@ -244,7 +244,7 @@
 		
 	
         <p class="article-headline-p">
-            Javascript的MVC框架的理解
+            三次握手和四次挥手简单笔记
         </p>
     </div>
 
@@ -262,7 +262,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>高翔</strong>
-        <span>2月 10, 2017</span>
+        <span>3月 05, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -287,7 +287,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/JS/">JS</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/MVC/">MVC</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/模式/">模式</a>
+        <a class="post_tag-link" href="/tags/HTTP/">HTTP</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/TCP/">TCP</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/笔记/">笔记</a>
     </ul>
     
 
@@ -315,7 +315,7 @@
     
     <!-- Share Weibo -->
     
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Javascript的MVC框架的理解&url=http://yoursite.com//2017/02/10/javascript的MVC框架的理解/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=三次握手和四次挥手简单笔记&url=http://yoursite.com//2017/03/05/三次握手和四次挥手简单笔记/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -333,7 +333,7 @@
 
     <!-- Share QQ -->
     
-    <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=高翔的博客&title=Javascript的MVC框架的理解&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/02/10/javascript的MVC框架的理解/index.html" target="_blank">
+    <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=高翔的博客&title=三次握手和四次挥手简单笔记&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/03/05/三次握手和四次挥手简单笔记/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 QQ
         </li>
@@ -351,25 +351,22 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<p><strong>MVC模式是架构模式的一种，它不仅适用于开发软件，也适用于其他广泛的设计和组织工作</strong><br><a id="more"></a></p>
-<h2 id="MVC模式是软件工程中一种软件架构模式，一般把软件模式分为三部分，模型-Model-视图-View-控制器-Controller"><a href="#MVC模式是软件工程中一种软件架构模式，一般把软件模式分为三部分，模型-Model-视图-View-控制器-Controller" class="headerlink" title="MVC模式是软件工程中一种软件架构模式，一般把软件模式分为三部分，模型(Model)+视图(View)+控制器(Controller);"></a>MVC模式是软件工程中一种软件架构模式，一般把软件模式分为三部分，模型(Model)+视图(View)+控制器(Controller);</h2><p>模型：模型用于封装与应用程序的业务逻辑相关的数据以及对数据处理的方法。模型有对数据直接访问的权利。模型不依赖 “视图” 和 “控制器”, 也就是说 模型它不关心页面如何显示及如何被操作.</p>
-<p>视图：视图层最主要的是监听模型层上的数据改变，并且实时的更新html页面。当然也包括一些事件的注册或者ajax请求操作(发布事件),都是放在视图层来完成。</p>
-<p>控制器：控制器接收用户的操作，最主要是订阅视图层的事件，然后调用模型或视图去完成用户的操作;比如：当页面上触发一个事件，控制器不输出任何东西及对页面做任何处理; 它只是接收请求并决定调用模型中的那个方法去处理请求, 然后再确定调用那个视图中的方法来显示返回的数据</p>
-<p><img src="http://image.beekka.com/blog/2015/bg2015020105.png" alt="image"></p>
-<h3 id="当你用手机查看一张你拍的照片的时候："><a href="#当你用手机查看一张你拍的照片的时候：" class="headerlink" title="当你用手机查看一张你拍的照片的时候："></a>当你用手机查看一张你拍的照片的时候：</h3><ol>
-<li>你的手点击屏幕（视图层View）上你想打开的那张照片</li>
-<li>你手机的操作系统（控制层Controller）便会接收到你点击的这个事件，发出读取这张照片的指令</li>
-<li>你手机的存储器（模型Model）收到读取的指令，便把这张照片从储存中取出来</li>
-<li>存储器（Model）取出来这张照片后，屏幕（View）上便显示出来</li>
-</ol>
-<h3 id="对比MVC和MVVM"><a href="#对比MVC和MVVM" class="headerlink" title="对比MVC和MVVM"></a>对比MVC和MVVM</h3><ul>
-<li>MVC：View（界面）触发事件–》Controller（业务）处理了业务，然后触发了数据更新–》不知道谁更新了Model的数据–》Model（带着数据）回到了View–》View更新数据  <ul>
-<li>Controller: 把view的每个变化视作事件，然后给每个事件定义对数据的操作，使model层数据变化  </li>
-<li>MVVM：ViewModel大致是Controller的作用，但是它是双向数据流，完全解耦M和V层<br>-ViewModel层把view上每个控件视作一个对象，在ViewModel上定义和控件数据绑定的数据对象以及对此数据对象的操作方法<br>以数据绑定的方式进行数据更新，改变view或改变model层数据，都能改变这个数据对象，双向绑定，互相影响</li>
+		<p><strong>最简单的笔记。。。</strong><br><a id="more"></a>  </p>
+<h1 id="TCP连接"><a href="#TCP连接" class="headerlink" title="TCP连接"></a>TCP连接</h1><p><img src="http://ww1.sinaimg.cn/large/96ea1c33gy1fdby4cuk3hj20ju06ndix" alt="image"></p>
+<h2 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h2><ul>
+<li>seq：序号</li>
+<li>ACK——标志位 ： TCP协议规定，只有ACK=1时有效，也规定连接建立后所有发送的报文的ACK必须为1</li>
+<li>SYN——标志位 ： 在连接建立时用来同步序号。当SYN=1而ACK=0时，表明这是一个连接请求报文。对方若同意建立连接，则应在响应报文中使SYN=1和ACK=1. 因此,  SYN置1就表示这是一个连接请求或连接接受报文。<br><img src="http://ww1.sinaimg.cn/large/96ea1c33gy1fdby3vacv3j20hf0bg0vj" alt="image"></li>
 </ul>
-</li>
+<p>##四次挥手</p>
+<ul>
+<li>FIN （finis）即完，终结的意思， 用来释放一个连接。当 FIN = 1 时，表明此报文段的发送方的数据已经发送完毕，并要求释放连接<br><img src="http://ww1.sinaimg.cn/large/96ea1c33gy1fdby4qhwlej20e308zweh" alt="image"></li>
 </ul>
-<p>待更新代码</p>
+<p>##为什么握手要三次，挥手要四次？？</p>
+<ul>
+<li>建立连接前需要双方证明自己有接收和发送数据的能力，</li>
+<li>关闭连接前，fin表示不再发送数据，但是可能还有没有完成发送的数据，所以FIN和ACK要分开发送</li>
+</ul>
 
 	
 	
@@ -398,9 +395,9 @@
 <div id="comments">
     <!-- 多说评论框 start -->
         <div class="ds-thread" 
-            data-thread-key="2017/02/10/javascript的MVC框架的理解/" 
-            data-url="http://yoursite.com/2017/02/10/javascript的MVC框架的理解/"
-            data-title="Javascript的MVC框架的理解"></div>
+            data-thread-key="2017/03/05/三次握手和四次挥手简单笔记/" 
+            data-url="http://yoursite.com/2017/03/05/三次握手和四次挥手简单笔记/"
+            data-title="三次握手和四次挥手简单笔记"></div>
     <!-- 多说评论框 end -->
 </div>
 
@@ -414,21 +411,13 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2017/02/20/javascript中的按引用传递和按值传递/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/02/10/对Node.JS的事件轮询(Event Loop)的理解/" id="post_nav-older" class="next-content">
+        <a href="/2017/03/02/小恩爱视频面试心得/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
