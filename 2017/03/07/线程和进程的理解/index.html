@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        我的第一篇文章 | 高翔的博客
+        线程和进程的理解 | 高翔的博客
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="我的第一篇文章 | 高翔的博客">
+    <meta property="og:title" content="线程和进程的理解 | 高翔的博客">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -210,7 +210,7 @@
 	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 		for="post-toc-trigger-btn">
 			
-			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#背景"><span class="post-toc-number">1.</span> <span class="post-toc-text">背景</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进程"><span class="post-toc-number">2.</span> <span class="post-toc-text">进程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#线程"><span class="post-toc-number">3.</span> <span class="post-toc-text">线程</span></a></li></ol>
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
@@ -244,7 +244,7 @@
 		
 	
         <p class="article-headline-p">
-            我的第一篇文章
+            线程和进程的理解
         </p>
     </div>
 
@@ -262,7 +262,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>高翔</strong>
-        <span>1月 03, 2017</span>
+        <span>3月 07, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -287,7 +287,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        
+        <a class="post_tag-link" href="/tags/理解/">理解</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/阿里巴巴/">阿里巴巴</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/面试题/">面试题</a>
     </ul>
     
 
@@ -315,7 +315,7 @@
     
     <!-- Share Weibo -->
     
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=我的第一篇文章&url=http://yoursite.com//2017/01/03/我的第一篇文章/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=线程和进程的理解&url=http://yoursite.com//2017/03/07/线程和进程的理解/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -333,7 +333,7 @@
 
     <!-- Share QQ -->
     
-    <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=高翔的博客&title=我的第一篇文章&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/01/03/我的第一篇文章/index.html" target="_blank">
+    <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=高翔的博客&title=线程和进程的理解&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/03/07/线程和进程的理解/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 QQ
         </li>
@@ -351,13 +351,40 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<p>tags:  </p>
-<ul>
-<li>Android</li>
-<li>Mac</li>
-</ul>
+		<p><strong>被阿里暴躁的面试官哥哥问到，瞬间原地爆炸</strong><br><a id="more"></a>  </p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>对于CPU，它需要把所有的任务（程序）一个个轮流执行，具体轮流的方法：<strong>先加载程序A的上下文，然后开始执行A，保存程序A的上下文，调入下一个要执行的程序B的程序上下文，然后开始执行B,保存程序B的上下文。。。。</strong></p>
+<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p> 进程就是包换上下文切换的程序执行时间总和 = CPU加载上下文+CPU执行+CPU保存上下文</p>
 <hr>
-<p>##测试，尝试发布自己的第一篇文章 ##<br><a id="more"></a><br>哈哈哈哈哈哈</p>
+<p>所以，进程可以说是上面定义的这个时间段，也可以认为是程序执行时，系统进行资源分配的一个实体。因为有上下文的限制，一个进程一般无法访问另一个进程的资源。</p>
+<h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>  某一个程序A（线程）得到cpu的时候，便加载A的上下文，但是A里面不止一个任务啊：当你打开qq，你一边和小红在视频聊天，一边还能收到小丽给你发来的消息。所以每个程序（进程）分为多个程序小段，这里的每个小段代表一个<strong>线程</strong><br>   <strong>但是这里的每一个小段都是属于A程序的，他们共用了A的上下文。</strong></p>
+<p>总结来说：</p>
+<ul>
+<li>线程和进程都是一个晓得程序，也都可以说成是一个时间段的描述。</li>
+<li>一个进程可以拥有多个线程，每个线程使用其所属进程的栈空间。 </li>
+<li>线程与进程的一个主要区别是，同一进程内的多个线程会共享部分状态， 多个线程可以读写同一块内存(一个进程无法直接访问另一进程的内存)。</li>
+<li>同时， 每个线程还拥有自己的寄存器和栈，其它线程可以读写这些栈内存。</li>
+</ul>
+<p>待更新：</p>
+<ul>
+<li>进程调度算法<ul>
+<li>先来先服务和短作业（进程）优先调度算法</li>
+<li>高优先权优先调度算法</li>
+<li>基于时间片的轮转调度算法</li>
+</ul>
+</li>
+<li>Windows内存管理的方式(块式、页式、段式、段页式).</li>
+<li>死锁的概念，导致死锁的原因，导致死锁的四个必要条件，预防死锁的方法、避免死锁的方法</li>
+<li>内存池、进程池、线程池。</li>
+<li>进程通信的几种方式<ul>
+<li>管道通信</li>
+<li>信号</li>
+<li>报文队列</li>
+<li>共享内存</li>
+<li>信号量</li>
+<li>套接口</li>
+</ul>
+</li>
+</ul>
 
 	
 	
@@ -386,9 +413,9 @@
 <div id="comments">
     <!-- 多说评论框 start -->
         <div class="ds-thread" 
-            data-thread-key="2017/01/03/我的第一篇文章/" 
-            data-url="http://yoursite.com/2017/01/03/我的第一篇文章/"
-            data-title="我的第一篇文章"></div>
+            data-thread-key="2017/03/07/线程和进程的理解/" 
+            data-url="http://yoursite.com/2017/03/07/线程和进程的理解/"
+            data-title="线程和进程的理解"></div>
     <!-- 多说评论框 end -->
 </div>
 
@@ -402,21 +429,13 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2017/01/04/搭建github博客步骤，超简便/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/01/03/hello-world/" id="post_nav-older" class="next-content">
+        <a href="/2017/03/05/Redux学习笔记/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
