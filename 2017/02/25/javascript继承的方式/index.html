@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        我的第一篇文章 | 高翔的博客
+        javascript继承的方式 | 高翔的博客
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="我的第一篇文章 | 高翔的博客">
+    <meta property="og:title" content="javascript继承的方式 | 高翔的博客">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -210,7 +210,7 @@
 	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 		for="post-toc-trigger-btn">
 			
-			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#javascript继承的方式"><span class="post-toc-number">1.</span> <span class="post-toc-text">javascript继承的方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#约定"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">约定</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-利用apply和call的构造函数继承"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">1. 利用apply和call的构造函数继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#缺点："><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">缺点：</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-原型继承"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">2.原型继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#缺点：-1"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">缺点：</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3空对象中介继承"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">3空对象中介继承</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#组合继承"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">组合继承</span></a></li></ol></li></ol>
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
@@ -244,7 +244,7 @@
 		
 	
         <p class="article-headline-p">
-            我的第一篇文章
+            javascript继承的方式
         </p>
     </div>
 
@@ -262,7 +262,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>高翔</strong>
-        <span>1月 03, 2017</span>
+        <span>2月 25, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -287,7 +287,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        
+        <a class="post_tag-link" href="/tags/js/">js</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/原型/">原型</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/继承/">继承</a>
     </ul>
     
 
@@ -315,7 +315,7 @@
     
     <!-- Share Weibo -->
     
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=我的第一篇文章&url=http://yoursite.com//2017/01/03/我的第一篇文章/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=javascript继承的方式&url=http://yoursite.com//2017/02/25/javascript继承的方式/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -333,7 +333,7 @@
 
     <!-- Share QQ -->
     
-    <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=高翔的博客&title=我的第一篇文章&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/01/03/我的第一篇文章/index.html" target="_blank">
+    <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=高翔的博客&title=javascript继承的方式&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/02/25/javascript继承的方式/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 QQ
         </li>
@@ -351,13 +351,31 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<p>tags:  </p>
-<ul>
-<li>Android</li>
-<li>Mac</li>
-</ul>
+		<p><strong>此继承非真正的继承</strong><br><a id="more"></a></p>
+<h1 id="javascript继承的方式"><a href="#javascript继承的方式" class="headerlink" title="javascript继承的方式"></a>javascript继承的方式</h1><p>javascript本身没有继承这一概念，都是通过模仿来实现继承的<br>下面几种方式可以实现javascript的继承</p>
+<h2 id="约定"><a href="#约定" class="headerlink" title="约定"></a>约定</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function Aminal()&#123;</div><div class="line">    this.species = &apos;动物&apos;;</div><div class="line">&#125;</div><div class="line">function Cat(name,color)&#123;</div><div class="line">　　　　this.name = name;</div><div class="line">　　　　this.color = color;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="1-利用apply和call的构造函数继承"><a href="#1-利用apply和call的构造函数继承" class="headerlink" title="1. 利用apply和call的构造函数继承"></a>1. 利用apply和call的构造函数继承</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function Cat(name,color)&#123;</div><div class="line">　　　　Animal.apply(this, arguments);</div><div class="line">　　　　this.name = name;</div><div class="line">　　　　this.color = color;</div><div class="line">　　&#125;</div><div class="line">　　var cat1 = new Cat(&quot;小乔&quot;,&quot;黑色&quot;);</div><div class="line">　　alert(cat1.species); // 动物</div></pre></td></tr></table></figure>
+<p>使用call或apply方法，将Animal对象的构造函数绑定在子对象上，这样子对象的实例就可以访问到Animal的属性</p>
 <hr>
-<p>##测试，尝试发布自己的第一篇文章 ##<br><a id="more"></a><br>哈哈哈哈哈哈</p>
+<h3 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h3><ul>
+<li>包含引用类型值的属性会被原型共享——有被修改的风险</li>
+<li>同时继承了两个对象的属性，即添加到this的属性和原型的属性。在绝大多时候不需要这些自身属性</li>
+<li>不支持将参数传入父级构造函数</li>
+</ul>
+<h2 id="2-原型继承"><a href="#2-原型继承" class="headerlink" title="2.原型继承"></a>2.原型继承</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Cat.prototype = new Animal();</div><div class="line">　　Cat.prototype.constructor = Cat;</div><div class="line">　　var cat1 = new Cat(&quot;小乔&quot;,&quot;黑色&quot;);</div><div class="line">　　alert(cat1.species); // 动物</div></pre></td></tr></table></figure>
+<p>让Cat的prototype指向一个Animal的实例，就能顺着原型链得到Animal的所有属性和方法，<br>但是构造函数的实例cat1的constructor也会指向Animal了。不能让cat1称为Animal生成的吧，所以我们手动矫正，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Cat.prototype.contructor = Cat;</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="缺点：-1"><a href="#缺点：-1" class="headerlink" title="缺点："></a>缺点：</h3><ul>
+<li>并没有链接到父级的原型链，在父级原型中定义的东西不会被子类看到</li>
+</ul>
+<h2 id="3空对象中介继承"><a href="#3空对象中介继承" class="headerlink" title="3空对象中介继承"></a>3空对象中介继承</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var F = function()&#123;&#125;;</div><div class="line">　　F.prototype = Animal.prototype;</div><div class="line">　　Cat.prototype = new F();</div><div class="line">　　Cat.prototype.constructor = Cat;</div></pre></td></tr></table></figure>
+<p>F作为一个空的对象，几乎会没有占用内存，并且，由于有了F这个中介，改变Cat.prototype也不会改变Animal.prototype对象</p>
+<h2 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h2><blockquote>
+<p>使用原型链实现对原型属性的和方法的继承，通过借用构造函数来实现对实例属性的继承。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function Cat(name,color)&#123;</div><div class="line">　　Animal.apply(this, arguments);</div><div class="line">　  this.name = name;</div><div class="line">　　this.color = color;</div><div class="line">&#125;</div><div class="line">Cat.prototype = new Animal();</div><div class="line">Cat.prototype.constructor = Cat;</div></pre></td></tr></table></figure>
+<p>因为这里先使用了Animal的构造函数又将Animal的实例作为了构造函数的原型。故对象本身的属性在对象的原型中也会同时拥有一套。。。。</p>
 
 	
 	
@@ -386,9 +404,9 @@
 <div id="comments">
     <!-- 多说评论框 start -->
         <div class="ds-thread" 
-            data-thread-key="2017/01/03/我的第一篇文章/" 
-            data-url="http://yoursite.com/2017/01/03/我的第一篇文章/"
-            data-title="我的第一篇文章"></div>
+            data-thread-key="2017/02/25/javascript继承的方式/" 
+            data-url="http://yoursite.com/2017/02/25/javascript继承的方式/"
+            data-title="javascript继承的方式"></div>
     <!-- 多说评论框 end -->
 </div>
 
@@ -402,7 +420,7 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2017/01/04/搭建github博客步骤，超简便/" id="post_nav-newer" class="prev-content">
+        <a href="/2017/02/26/Webpack和Gulp对比与使用体会/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -416,7 +434,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2017/01/03/hello-world/" id="post_nav-older" class="next-content">
+        <a href="/2017/02/25/HTTP缓存笔记/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
