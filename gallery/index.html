@@ -1,382 +1,206 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <!-- Title -->
-    
-    <title>
-        gallery | 高翔的博客
-    </title>
-    
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" sizes="192x192" href="/img/favicon.png">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
-    
-    <!-- Meta & INfo -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0097A7">
-    <meta name="author" content="高翔">
-    <meta name="description" content="null">
-    <meta name="keywords" content="高翔 博客">
-    
-    <!--iOS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-title" content="Title">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="480">
-    
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="高翔的博客">
-    
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="gallery | 高翔的博客">
-    <meta property="og:description" content="null">
-    
-     <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-        
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-    
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <link rel="stylesheet" href="/css/embed.default.css">
-    <!-- Config CSS -->
+<head>
+  <meta charset="utf-8">
+  
+  <title>gallery | 高翔的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="gallery">
+<meta property="og:url" content="http://yoursite.com/gallery/index.html">
+<meta property="og:site_name" content="高翔的博客">
+<meta property="og:updated_time" content="2017-01-04T14:07:47.945Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gallery">
+  
+    <link rel="alternate" href="/atom.xml" title="高翔的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
 
-
-<!-- Other Styles -->
-<style>
-	body, html{
-		font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-	}
-	
-    a{
-        color: #00838F
-    }
-    
-    .mdl-card__media,
-    #search-label,
-    #search-form-label:after,
-    #scheme-Paradox .hot_tags-count,
-    #scheme-Paradox .sidebar_archives-count,
-    #scheme-Paradox .sidebar-colored .sidebar-header,
-    #scheme-Paradox .sidebar-colored .sidebar-badge{
-        background-color: #0097A7 !important
-    }
-    
-	/* Sidebar User Drop Down Menu Text Color */
-	#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
-        color: #0097A7 !important
-    }
-    
-    #post_entry-right-info,
-    .sidebar-colored .sidebar-nav li:hover > a,
-    .sidebar-colored .sidebar-nav li:hover > a i,
-    .sidebar-colored .sidebar-nav li > a:hover,
-    .sidebar-colored .sidebar-nav li > a:hover i,
-    .sidebar-colored .sidebar-nav li > a:focus i,
-    .sidebar-colored .sidebar-nav > .open > a,
-    .sidebar-colored .sidebar-nav > .open > a:hover,
-    .sidebar-colored .sidebar-nav > .open > a:focus,
-    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
-        color: #0097A7 !important
-    }
-    
-		
-	.material-layout .material-post>.material-nav,
-	.material-layout .material-index>.material-nav,
-	.material-nav a{
-		color: #FFFFFF;
-	}
-		
-	#scheme-Paradox .MD-burger-layer {
-		background-color: #FFFFFF;
-	}
-
-	#scheme-Paradox #post-toc-trigger-btn{
-		color: #FFFFFF;
-	}
-	
-	.post-toc a:hover{
-		color: #00838F;
-		text-decoration: underline;
-	}
-</style>
-
-
-<!-- Theme Background Related-->
-
-    <style>
-        body{
-            background-image: url(/img/bg.jpg);
-        }
-    </style>
-
-
-
-
-<!-- Fade Effect -->
-
-    <style>
-        .fade {
-            transition: all 800ms linear;
-            -webkit-transform: translate3d(0,0,0);
-            -moz-transform: translate3d(0,0,0);
-            -ms-transform: translate3d(0,0,0);
-            -o-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-            opacity: 1;
-        }
-
-        .fade.out{
-            opacity: 0;
-        }
-    </style>
-
-	<script src="/js/jquery.min.js"></script>
-	
-	<link rel="stylesheet" href="/css/highlight/solarized-white.css">
-	
-	<!-- UC Browser Compatible-->
-	<script>
-		var agent = navigator.userAgent.toLowerCase();
-		if(agent.indexOf('ucbrowser')>0) {
-			document.write('<link rel="stylesheet" href="/css/uc.css">');
-		   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-		}
-	</script>
-    
-    <!-- Custom Head -->
-    <!--  -->
 </head>
-	
-	
-		<!-- Single Gallery Page -->
-		<link rel="stylesheet" href="/css/gallery.min.css">
 
 <body>
-	<!-- Wrapper -->
-	<div id="wrapper">
-		
-		<!-- Header -->
-		<header id="header">
-			<h1>
-				<a href="/"><strong>高翔的博客</strong></a> - gallery
-			</h1>
-			<nav>
-				<ul>
-					<li>
-						<a href="#footer" class="icon fa-info-circle">
-							©&nbsp;高翔
-						</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">高翔的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="gallery-undefined" class="article article-type-gallery" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/gallery/index.html" class="article-date">
+  <time datetime="2017-01-03T16:00:00.000Z" itemprop="datePublished">2017-01-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      gallery
+    </h1>
+  
 
-		<!-- Main -->
-		<div id="main">
-			
-				
-					<article class="thumb">
-						<a href="http://ww3.sinaimg.cn/large/96ea1c33gw1fbeuvqszykj21kw11ohdt.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww3.sinaimg.cn/mw690/96ea1c33gw1fbeuvqszykj21kw11ohdt.jpg" style="display: inline" alt="洪崖洞" /></a>
-						<h2>洪崖洞</h2>
-						<p>2016-12-24 平安夜 重庆洪崖洞之看我后期补妆</p>
-					</article>
-				
-					<article class="thumb">
-						<a href="http://ww1.sinaimg.cn/large/96ea1c33gw1fbevjwe8qgj21kw11ohdt.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww4.sinaimg.cn/mw690/96ea1c33gw1fbevjwe8qgj21kw11ohdt.jpg" style="display: inline" alt="洪崖洞2" /></a>
-						<h2>洪崖洞2</h2>
-						<p>2016-12-24 平安夜 重庆洪崖洞 8s f18 iso-100</p>
-					</article>
-				
-					<article class="thumb">
-						<a href="http://ww2.sinaimg.cn/large/96ea1c33gw1fbevn2iwh7j21kw11x1kx.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww4.sinaimg.cn/mw690/96ea1c33gw1fbevn2iwh7j21kw11x1kx.jpg" style="display: inline" alt="第一次也是唯一一次用5D3" /></a>
-						<h2>第一次也是唯一一次用5D3</h2>
-						<p>2016-2-15 家里县城的咖啡馆（名字忘了） 1/50s f5 iso-320</p>
-					</article>
-				
-					<article class="thumb">
-						<a href="http://ww3.sinaimg.cn/large/96ea1c33gw1fbevr6xyerj21kw11xe81.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww3.sinaimg.cn/mw690/96ea1c33gw1fbevr6xyerj21kw11xe81.jpg" style="display: inline" alt="死基佬给我拍了一张糊了的帅照" /></a>
-						<h2>死基佬给我拍了一张糊了的帅照</h2>
-						<p>2016-12-2 居然忘了小痰盂不能全开f1.8，好气啊 1/40s f1.8 iso-500</p>
-					</article>
-				
-					<article class="thumb">
-						<a href="http://ww3.sinaimg.cn/large/96ea1c33gw1fbeyfaa4k5j21kw11oe2s.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww3.sinaimg.cn/mw690/96ea1c33gw1fbeyfaa4k5j21kw11oe2s.jpg" style="display: inline" alt="风雨操场" /></a>
-						<h2>风雨操场</h2>
-						<p>2015-5-2 一张价值500软妹币的照片 重庆邮电大学风雨操场 f7.1 1/40s iso-200</p>
-					</article>
-				
-					<article class="thumb">
-						<a href="http://ww2.sinaimg.cn/large/96ea1c33gw1fbeyi1tbinj21kw11o4qp.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww3.sinaimg.cn/mw690/96ea1c33gw1fbeyi1tbinj21kw11o4qp.jpg" style="display: inline" alt="樱花树下" /></a>
-						<h2>樱花树下</h2>
-						<p>2016-3-26 女主角只有1/250秒好看的神态，被我抓拍到啦！ 重庆邮电大学老操场旁樱花树下 f2.8 1/250s iso-100</p>
-					</article>
-				
-					<article class="thumb">
-						<a href="http://ww1.sinaimg.cn/large/96ea1c33gw1fbfk7vr9a6j21kw11otst.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww3.sinaimg.cn/mw690/96ea1c33gw1fbfk802apqj21kw11otst.jpg" style="display: inline" alt="银杏" /></a>
-						<h2>银杏</h2>
-						<p>2015-12-6 重邮 银杏 八十万 f8 1/250s iso-100</p>
-					</article>
-				
-					<article class="thumb">
-						<a href="http://ww2.sinaimg.cn/large/96ea1c33gw1fbfk8sg1lsj21kw11ob29.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww3.sinaimg.cn/mw690/96ea1c33gw1fbfk8sg1lsj21kw11ob29.jpg" style="display: inline" alt="银杏2" /></a>
-						<h2>银杏2</h2>
-						<p>2015-12-6 重邮 银杏 感觉这是用狗头拍的画质最好的一张照片了，之后便换了适马17-50 f3.5 1/100s iso-100</p>
-					</article>
-				
-					<article class="thumb">
-						<a href="http://ww3.sinaimg.cn/large/96ea1c33gw1fbfkbdanqtj21kw11x7rl.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww3.sinaimg.cn/mw690/96ea1c33gw1fbfkbdanqtj21kw11x7rl.jpg" style="display: inline" alt="5D3之非主流调色" /></a>
-						<h2>5D3之非主流调色</h2>
-						<p>2016-2-15 七里坝水库旁，见识到了怎样的后期都达不到的画质碾压  f18 1/100s iso-100</p>
-					</article>
-				
-					<article class="thumb">
-						<a href="http://ww4.sinaimg.cn/large/96ea1c33gw1fbfkj71kcgj21kw11ou0x.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww1.sinaimg.cn/mw690/96ea1c33gw1fbfkj71kcgj21kw11ou0x.jpg" style="display: inline" alt="Sugar tablets" /></a>
-						<h2>Sugar tablets</h2>
-						<p>2016-7-19 干花广告糖水片  f8 1/50s iso-100</p>
-					</article>
-				
-					<article class="thumb">
-						<a href="http://ww1.sinaimg.cn/large/96ea1c33gw1fbfl6tp6pqj21kw11oaus.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww4.sinaimg.cn/mw690/96ea1c33gw1fbfl6tp6pqj21kw11oaus.jpg" style="display: inline" alt="太极的雪景" /></a>
-						<h2>太极的雪景</h2>
-						<p>2016-1-23 以强大的意志力忍住没有手抖  f6.3 1/30s iso-100</p>
-					</article>
-				
-					<article class="thumb">
-						<a href="http://ww4.sinaimg.cn/large/96ea1c33gw1fbh7gn5z7lj21kw16o4qp.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww1.sinaimg.cn/mw690/96ea1c33gw1fbh7gn5z7lj21kw16o4qp.jpg" style="display: inline" alt="继续粘5D3的光" /></a>
-						<h2>继续粘5D3的光</h2>
-						<p>2016-2-15 才发现自己参数没调好哈哈  f4 1/1600s iso-30</p>
-					</article>
-				
-					<article class="thumb">
-						<a href="http://ww1.sinaimg.cn/large/96ea1c33gw1fbh7hslsabj21kw2dw18s.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww1.sinaimg.cn/mw690/96ea1c33gw1fbh7hslsabj21kw2dw18s.jpg" style="display: inline" alt="校园星空" /></a>
-						<h2>校园星空</h2>
-						<p>2015-5-1 劳动节，剩我一人在寝室，还好有南山星空相伴  f3.5 30s iso-200</p>
-					</article>
-				
-					<article class="thumb">
-						<a href="http://ww1.sinaimg.cn/large/96ea1c33gw1fbh7lkp0nqj21kw11o4qp.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww4.sinaimg.cn/mw690/96ea1c33gw1fbh7lkp0nqj21kw11o4qp.jpg" style="display: inline" alt="寝室视角" /></a>
-						<h2>寝室视角</h2>
-						<p>2016-7-5 从工作室回寝室，发现云飘得厉害，室友叫我拍下  f7.1 30s iso-400</p>
-					</article>
-				
-					<article class="thumb">
-						<a href="http://ww4.sinaimg.cn/large/96ea1c33gw1fbh7pxprtkj21kw11o4qp.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww3.sinaimg.cn/mw690/96ea1c33gw1fbh7pxprtkj21kw11o4qp.jpg" style="display: inline" alt="嘉陵江大桥" /></a>
-						<h2>嘉陵江大桥</h2>
-						<p>2016-12-24 依然非主流的调色，还有一杯让人忘不了的醪糟奶茶  f2.8 1/30s iso-1600</p>
-					</article>
-				
-					<article class="thumb">
-						<a href="http://ww2.sinaimg.cn/large/96ea1c33gw1fbh7zdh7ijj21kw151qtc.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww1.sinaimg.cn/mw690/96ea1c33gw1fbh7zdh7ijj21kw151qtc.jpg" style="display: inline" alt="cos拍摄" /></a>
-						<h2>cos拍摄</h2>
-						<p>2015-7-25 我家背后的山上的cos活动，200块的手动定焦头蹭拍一张  f2.8 1/80s iso-100</p>
-					</article>
-				
-					<article class="thumb">
-						<a href="http://ww1.sinaimg.cn/large/96ea1c33gw1fbh82hscfnj21kw0zl1kx.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww2.sinaimg.cn/mw690/96ea1c33gw1fbh82hscfnj21kw0zl1kx.jpg" style="display: inline" alt="樱花树下姊妹篇" /></a>
-						<h2>樱花树下姊妹篇</h2>
-						<p>2016-3-26 构图不如上一张樱花树下，但是衣着不显得臃肿，更有小清新的感觉  f3.5 1/250s iso-100</p>
-					</article>
-				
-					<article class="thumb">
-						<a href="http://ww1.sinaimg.cn/large/96ea1c33gw1fbh8quvp11j21kw11xb29.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww1.sinaimg.cn/mw690/96ea1c33gw1fbh8quvp11j21kw11xb29.jpg" style="display: inline" alt="纯粹的足球" /></a>
-						<h2>纯粹的足球</h2>
-						<p>2016-6-17 我最美好的足球记忆，21岁的我就在这里，满眼望去，全是自己20岁时候的傻逼样子  f4.5 1/40s iso-1250</p>
-					</article>
-				
-					<article class="thumb">
-						<a href="http://ww1.sinaimg.cn/large/96ea1c33gw1fbh8kfutu9j21kw16k4l5.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww4.sinaimg.cn/mw690/96ea1c33gw1fbh8kfutu9j21kw16k4l5.jpg" style="display: inline" alt="军训助理的美好回忆" /></a>
-						<h2>军训助理的美好回忆</h2>
-						<p>2015-7-6 真是怀念当年做军训助理，专逮熟人拍，要妹子联系方式的请联系我  f2.8 1/1000s iso-100</p>
-					</article>
-				
-					<article class="thumb">
-						<a href="http://ww3.sinaimg.cn/large/96ea1c33gw1fbh8v74bdxj21kw11okcb.jpg" class="image"><img src="/img/load.gif" lazy-src="http://ww2.sinaimg.cn/mw690/96ea1c33gw1fbh8v74bdxj21kw11okcb.jpg" style="display: inline" alt="外公" /></a>
-						<h2>外公</h2>
-						<p>2015-11-27 外公八十大寿，这张就不上参数啦，没什么技巧的一张照片，那天才第一次好好为外公拍了一张照片</p>
-					</article>
-				
-			
-		</div>
-		
-		<!-- Footer -->
-<!--
-		<footer id="footer" class="panel">
-			<div class="inner split">
-				<div>
-					<section>
-						<h2>Magna feugiat sed adipiscing</h2>
-						<p>Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum eget quis orci mattis aliquet. Maecenas fringilla et ante at lorem et ipsum. Dolor nulla eu bibendum sapien. Donec non pharetra dui. Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum.</p>
-					</section>
-					<section>
-						<h2>Follow me on ...</h2>
-						<ul class="icons">
-							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
-							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-							<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						</ul>
-					</section>
-					<p class="copyright">
-						&copy; Design: <a href="#">Gallery</a>.
-					</p>
-				</div>
-				<div>
-					<section>
-						<h2>Get in touch</h2>
-						<form method="post" action="#">
-							<div class="field half first">
-								<input type="text" name="name" id="name" placeholder="Name" />
-							</div>
-							<div class="field half">
-								<input type="text" name="email" id="email" placeholder="Email" />
-							</div>
-							<div class="field">
-								<textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
-							</div>
-							<ul class="actions">
-								<li><input type="submit" value="Send" class="special" /></li>
-								<li><input type="reset" value="Reset" /></li>
-							</ul>
-						</form>
-					</section>
-				</div>
-			</div>
-		</footer>
--->
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/gallery/index.html" data-id="cj025nx1c003e8ovl8aleorgf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
 
-	</div>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/插件/">插件</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/理解/">理解</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试/">面试</a></li></ul>
+    </div>
+  </div>
 
-	<!-- Scripts -->
-	<script src="/js/jquery.min.js"></script>
-	<script src="/js/gallery/LazyLoad.js"></script>
-	<script src="/js/gallery/jquery.poptrox.min.js"></script>
-	<script src="/js/gallery/skel.min.js"></script>
-	<script src="/js/gallery/util.min.js"></script>
-	<script src="/js/gallery/main.min.js"></script>
-	<script>
-	    var x = new LazyLoad();
-	    x.init();
-	</script>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gulp/">Gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/">MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webpack/">Webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redux/">redux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/url/">url</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/体会/">体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端框架/">前端框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区别/">区别</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型/">原型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/参数/">参数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小恩爱/">小恩爱</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/扇贝/">扇贝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插件/">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建博客/">搭建博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据类型/">数据类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机制/">机制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模式/">模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浏览器/">浏览器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/理解/">理解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/继承/">继承</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/缓存/">缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里巴巴/">阿里巴巴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/HTTP/" style="font-size: 13.33px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/url/" style="font-size: 10px;">url</a> <a href="/tags/体会/" style="font-size: 13.33px;">体会</a> <a href="/tags/前端框架/" style="font-size: 10px;">前端框架</a> <a href="/tags/区别/" style="font-size: 10px;">区别</a> <a href="/tags/原型/" style="font-size: 10px;">原型</a> <a href="/tags/参数/" style="font-size: 10px;">参数</a> <a href="/tags/小恩爱/" style="font-size: 10px;">小恩爱</a> <a href="/tags/扇贝/" style="font-size: 10px;">扇贝</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/搭建博客/" style="font-size: 10px;">搭建博客</a> <a href="/tags/数据类型/" style="font-size: 10px;">数据类型</a> <a href="/tags/机制/" style="font-size: 10px;">机制</a> <a href="/tags/模式/" style="font-size: 10px;">模式</a> <a href="/tags/浏览器/" style="font-size: 10px;">浏览器</a> <a href="/tags/理解/" style="font-size: 10px;">理解</a> <a href="/tags/笔记/" style="font-size: 13.33px;">笔记</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/阿里巴巴/" style="font-size: 10px;">阿里巴巴</a> <a href="/tags/面试题/" style="font-size: 16.67px;">面试题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/07/线程和进程的理解/">线程和进程的理解</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/05/Redux学习笔记/">初学redux笔记，及一个最简单的redux例子</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/05/三次握手和四次挥手简单笔记/">三次握手和四次挥手简单笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/02/小恩爱视频面试心得/">小恩爱视频面试心得体会</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/27/扇贝面试题及体会/">扇贝面试题及体会</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 高翔<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
 </body>
-	
 </html>
