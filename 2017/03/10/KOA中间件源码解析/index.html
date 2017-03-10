@@ -369,10 +369,8 @@
 <p>所以这时候就轮到我们的CO模块出场啦</p>
 <h2 id="CO"><a href="#CO" class="headerlink" title="CO"></a>CO</h2><p>CO模块：CO模块便通过递归使得嵌套好的generate依次自动执行（包装为Promise对象）<br>大致源码实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function run(gen)&#123;</div><div class="line">  var g;</div><div class="line">  if (typeof gen.next === &apos;function&apos;) &#123;</div><div class="line">    g = gen;</div><div class="line">  &#125; else &#123;</div><div class="line">    g = gen();</div><div class="line">  &#125;</div><div class="line">  function next()&#123;</div><div class="line">    var tmp = g.next();</div><div class="line">    //如果tmp.done为true，那么证明generator执行结束，返回。if (tmp.done) &#123;</div><div class="line">      return;</div><div class="line">    &#125; elseif (typeof g.next === &apos;function&apos;) &#123;</div><div class="line">      run(tmp.value);</div><div class="line">      next();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  next();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <ul>
-<li><p>co帮我们”自动管理”generator的next，并根据调用返回的value做出不同的响应，这个响应是通过toPromise方法进行的</p>
-</li>
-<li><p>如果遇到另外一个generator，co会继续调用自己，这就是为什么我们不需要写yield* next(使得next自执行)的原因，而只要写yield next  </p>
-</li>
+<li>co帮我们”自动管理”generator的next，并根据调用返回的value做出不同的响应，这个响应是通过toPromise方法进行的</li>
+<li>如果遇到另外一个generator，co会继续调用自己，这就是为什么我们不需要写yield* next(使得next自执行)的原因，而只要写yield next  </li>
 <li>而且CO模块会判断执行完所有的中间件，才会对res进行操作，所以在中间件中我们可以随意修改res，不会出现express中的路由已经终止请求-响应循环。</li>
 </ul>
 
