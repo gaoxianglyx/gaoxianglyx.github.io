@@ -360,16 +360,16 @@
 <p>使用call或apply方法，将Animal对象的构造函数绑定在子对象上，这样子对象的实例就可以访问到Animal的属性</p>
 <hr>
 <h3 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h3><ul>
-<li>包含引用类型值的属性会被原型共享——有被修改的风险</li>
-<li>同时继承了两个对象的属性，即添加到this的属性和原型的属性。在绝大多时候不需要这些自身属性</li>
-<li>不支持将参数传入父级构造函数</li>
+<li>并没有链接到父级的原型链，在父级原型中定义的东西不会被子类看到</li>
 </ul>
 <h2 id="2-原型继承"><a href="#2-原型继承" class="headerlink" title="2.原型继承"></a>2.原型继承</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Cat.prototype = new Animal();</div><div class="line">　　Cat.prototype.constructor = Cat;</div><div class="line">　　var cat1 = new Cat(&quot;小乔&quot;,&quot;黑色&quot;);</div><div class="line">　　alert(cat1.species); // 动物</div></pre></td></tr></table></figure>
 <p>让Cat的prototype指向一个Animal的实例，就能顺着原型链得到Animal的所有属性和方法，<br>但是构造函数的实例cat1的constructor也会指向Animal了。不能让cat1称为Animal生成的吧，所以我们手动矫正，</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Cat.prototype.contructor = Cat;</div></pre></td></tr></table></figure>
 <hr>
 <h3 id="缺点：-1"><a href="#缺点：-1" class="headerlink" title="缺点："></a>缺点：</h3><ul>
-<li>并没有链接到父级的原型链，在父级原型中定义的东西不会被子类看到</li>
+<li>包含引用类型值的属性会被原型共享——有被修改的风险</li>
+<li>同时继承了两个对象的属性，即添加到this的属性和原型的属性。在绝大多时候不需要这些自身属性</li>
+<li>不支持将参数传入父级构造函数</li>
 </ul>
 <h2 id="3空对象中介继承"><a href="#3空对象中介继承" class="headerlink" title="3空对象中介继承"></a>3空对象中介继承</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var F = function()&#123;&#125;;</div><div class="line">　　F.prototype = Animal.prototype;</div><div class="line">　　Cat.prototype = new F();</div><div class="line">　　Cat.prototype.constructor = Cat;</div></pre></td></tr></table></figure>
 <p>F作为一个空的对象，几乎会没有占用内存，并且，由于有了F这个中介，改变Cat.prototype也不会改变Animal.prototype对象</p>
