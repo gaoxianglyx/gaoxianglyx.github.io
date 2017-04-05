@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+<meta name="google-site-verification" content="0OxCTjCTjNo4u25z69rIPUtJC62U7PFEda1bLrF2m6A" />
+    <head>
+    <!-- Title -->
+    <meta name="google-site-verification" content="0OxCTjCTjNo4u25z69rIPUtJC62U7PFEda1bLrF2m6A" />
+    
+    <title>
+        javascript常见手写代码 | 高翔的博客
+    </title>
+    
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+    
+    <!-- Meta & INfo -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="高翔">
+    <meta name="description" content="null">
+    <meta name="keywords" content="高翔 博客">
+    
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+    
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="高翔的博客">
+    
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="javascript常见手写代码 | 高翔的博客">
+    <meta property="og:description" content="null">
+    
+     <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+        
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+    
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <link rel="stylesheet" href="/css/embed.default.css">
+    <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+	body, html{
+		font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+	}
+	
+    a{
+        color: #00838F
+    }
+    
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #0097A7 !important
+    }
+    
+	/* Sidebar User Drop Down Menu Text Color */
+	#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
+        color: #0097A7 !important
+    }
+    
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
+        color: #0097A7 !important
+    }
+    
+		
+	.material-layout .material-post>.material-nav,
+	.material-layout .material-index>.material-nav,
+	.material-nav a{
+		color: #FFFFFF;
+	}
+		
+	#scheme-Paradox .MD-burger-layer {
+		background-color: #FFFFFF;
+	}
+
+	#scheme-Paradox #post-toc-trigger-btn{
+		color: #FFFFFF;
+	}
+	
+	.post-toc a:hover{
+		color: #00838F;
+		text-decoration: underline;
+	}
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-image: url(/img/bg.jpg);
+        }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
+
+	<script src="/js/jquery.min.js"></script>
+	
+	<link rel="stylesheet" href="/css/highlight/solarized-white.css">
+	
+	<!-- UC Browser Compatible-->
+	<script>
+		var agent = navigator.userAgent.toLowerCase();
+		if(agent.indexOf('ucbrowser')>0) {
+			document.write('<link rel="stylesheet" href="/css/uc.css">');
+		   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+		}
+	</script>
+    
+    <!-- Custom Head -->
+    <!--  -->
+</head>
+	
+	
+
+    <body id="scheme-Paradox">
+
+		
+        <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+				
+			
+			
+            <!-- Main Container -->
+            <main class="material-layout__content" id="main">
+				
+                <!-- Top Anchor -->
+                <div id="top"></div>
+				
+				
+                <!-- Hamburger Button -->
+                <button class="MD-burger-icon sidebar-toggle">
+                    <span class="MD-burger-layer"></span>
+                </button>
+				
+				
+                <!-- Post TOC -->
+
+    
+	<!-- Back Button -->
+<!--
+	<div class="material-back" id="backhome-div" tabindex="0">
+		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
+			<i class="material-icons" role="presentation">arrow_back</i>
+			<span class="mdl-button__ripple-container">
+				<span class="mdl-ripple"></span>
+			</span>
+		</a>
+	</div>			
+-->
+	<!-- Left aligned menu below button -->
+	<button id="post-toc-trigger-btn"
+			class="mdl-button mdl-js-button mdl-button--icon">
+	  <i class="material-icons">format_list_numbered</i>
+	</button>
+
+	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+		for="post-toc-trigger-btn">
+			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#全排列"><span class="post-toc-number">1.</span> <span class="post-toc-text">全排列</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HASH表去重"><span class="post-toc-number">2.</span> <span class="post-toc-text">HASH表去重</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#快排"><span class="post-toc-number">3.</span> <span class="post-toc-text">快排</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#笔试输入"><span class="post-toc-number">4.</span> <span class="post-toc-text">笔试输入</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#堆排序"><span class="post-toc-number">5.</span> <span class="post-toc-text">堆排序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#手写事件代理"><span class="post-toc-number">6.</span> <span class="post-toc-text">手写事件代理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#手写深复制（兼容数组和对象"><span class="post-toc-number">7.</span> <span class="post-toc-text">手写深复制（兼容数组和对象)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#待更新——完善注释"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">待更新——完善注释</span></a></li></ol></li></ol>
+		
+<!--			<li class="mdl-menu__item">Some Action</li>-->
+	</ul>
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+		
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+	<!-- Paradox Post Header -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+				<script>
+    
+    var randomNum;
+    randomNum = Math.floor(Math.random() * 12 + 1);
+    
+    $(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')');
+    
+</script>
+
+		
+	
+        <p class="article-headline-p">
+            javascript常见手写代码
+        </p>
+    </div>
+
+	
+
+				
+				
+					<!-- Paradox Post Info -->
+					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/logo.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>高翔</strong>
+        <span>3月 24, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+<!--
+    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+        <i class="material-icons" role="presentation">favorite</i>
+        <span class="visuallyhidden">favorites</span>
+    </button>
+-->
+
+    <!-- Qrcode -->
+    
+
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/js/">js</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/手写代码/">手写代码</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/面试/">面试</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+
+    
+
+    
+      
+      <!-- Busuanzi Views -->
+      <a class="post_share-link" href="#">
+        <li class="mdl-menu__item">
+            <span id="busuanzi_container_page_pv">
+                <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+            </span>
+        </li>
+      </a>
+      
+    
+    
+    <!-- Share Weibo -->
+    
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=javascript常见手写代码&url=http://yoursite.com//2017/03/24/算法 手写/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <li class="mdl-menu__item">
+            分享到微博
+        </li>
+    </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+    <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=高翔的博客&title=javascript常见手写代码&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/03/24/算法 手写/index.html" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 QQ
+        </li>
+    </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+				
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+	
+		<p><strong>算法，深复制，事件代理。。。</strong><br><a id="more"></a></p>
+<h2 id="全排列"><a href="#全排列" class="headerlink" title="全排列"></a>全排列</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">function swap(arr,i,j) &#123; </div><div class="line">    if(i!=j) &#123;          </div><div class="line">        var temp=arr[i]; </div><div class="line">        arr[i]=arr[j]; </div><div class="line">        arr[j]=temp; </div><div class="line">    &#125; </div><div class="line">&#125; </div><div class="line">var count=0; </div><div class="line">function show(arr) &#123; </div><div class="line">    document.write(&quot;P&lt;sub&gt;&quot;+ ++count+&quot;&lt;/sub&gt;: &quot;+arr+&quot;&lt;br /&gt;&quot;); </div><div class="line">&#125; </div><div class="line">//此方法最主要是交换的思路</div><div class="line">function perm(arr) &#123;   </div><div class="line">     (function fn(n) &#123; //为第n个位置选择元素</div><div class="line">        for(var i=n;i&lt;arr.length;i++) &#123; </div><div class="line">            swap(arr,i,n);</div><div class="line">             if(n+1&lt;arr.length-1) //根据下标a(b+1) 不是最后一项，判断数组中剩余的待全排列的元素是否大于1个</div><div class="line">                 fn(n+1); //从第n+1个下标进行全排列</div><div class="line">             else</div><div class="line">                 show(arr); //显示一组结果</div><div class="line">             swap(arr,i,n); </div><div class="line">         &#125; </div><div class="line">     &#125;)(0); </div><div class="line"> &#125; </div><div class="line"> perm([&quot;e1&quot;,&quot;e2&quot;,&quot;e3&quot;,&apos;e4&apos;]);</div></pre></td></tr></table></figure>
+<h2 id="HASH表去重"><a href="#HASH表去重" class="headerlink" title="HASH表去重"></a>HASH表去重</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Array.prototype.unique2 = function()</div><div class="line">&#123;</div><div class="line">	var n = &#123;&#125;,r=[]; //n为hash表，r为临时数组</div><div class="line">	for(var i = 0; i &lt; this.length; i++) //遍历当前数组</div><div class="line">	&#123;</div><div class="line">		if (!n[this[i]]) //如果hash表中没有当前项</div><div class="line">		&#123;</div><div class="line">			n[this[i]] = this[i]; //存入hash表</div><div class="line">			r.push(this[i]); //把当前数组的当前项push到临时数组里面</div><div class="line">		&#125; else if(typeof(n[this[i]]) !== typeof(this[i])) &#123; r.push(this[i])&#125;//num和string不算重复:如&apos;2&apos;和2</div><div class="line">	&#125;</div><div class="line">	return r;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">//定义位置交换的方法</div><div class="line">       function swap (arr, index1, index2) &#123;</div><div class="line">           var temp = arr[index1];</div><div class="line">           arr[index1] = arr[index2];</div><div class="line">           arr[index2] = temp;</div><div class="line">       &#125;;</div><div class="line">       //划分过程</div><div class="line">       function partition (arr, left, right) &#123;</div><div class="line">           var pivot = arr[Math.floor((right + left) / 2)],  // 中轴的值。</div><div class="line">                   i = left,</div><div class="line">                   j = right;</div><div class="line">           while (i &lt;= j) &#123;</div><div class="line">                   // 先从左边开始，当遇到比中轴大的值停止向前</div><div class="line">                   while (arr[i] &lt; pivot) &#123; </div><div class="line">                       i++;</div><div class="line">                   &#125;</div><div class="line">                   while (arr[j] &gt; pivot) &#123;</div><div class="line">                       j--;</div><div class="line">                   &#125;</div><div class="line">                   //直到左边遇到&gt;中值的，右边遇到&lt;中指的，便交换</div><div class="line">                   if (i &lt;= j) &#123;</div><div class="line">                       swap(arr, i, j);</div><div class="line">                       i++;</div><div class="line">                       j--;</div><div class="line">                   &#125;</div><div class="line">           &#125;</div><div class="line">           //返回左指针的位置</div><div class="line">           return i;</div><div class="line">       &#125;;</div><div class="line">       //递归调用quick</div><div class="line">       function quick (arr, left, right)&#123;</div><div class="line">           var index;</div><div class="line">           //主流程直到分割到数组长度为1时结束</div><div class="line">           if (arr.length &gt; 1) &#123;</div><div class="line">               index = partition(arr, left, right);</div><div class="line">               //这里用if来将分割的左右两部分分别执行quick</div><div class="line">               if (left &lt; index - 1) &#123;</div><div class="line">                   quick(arr, left, index - 1);</div><div class="line">               &#125;</div><div class="line">               if (index &lt; right) &#123;</div><div class="line">                   quick(arr, index, right);</div><div class="line">               &#125;</div><div class="line">            &#125;</div><div class="line">           return arr;  // 结束位置</div><div class="line">       &#125;</div></pre></td></tr></table></figure>
+<h2 id="笔试输入"><a href="#笔试输入" class="headerlink" title="笔试输入"></a>笔试输入</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var readline = require(&apos;readline&apos;);</div><div class="line"></div><div class="line">rl = readline.createInterface(&#123;</div><div class="line">    input: process.stdin,</div><div class="line">    output: process.stdout</div><div class="line">&#125;);</div><div class="line"></div><div class="line">var K = 1; // 输入K行</div><div class="line">var inputs = [];</div><div class="line">rl.on(&apos;line&apos;, function(data) &#123;</div><div class="line">    // 获取输入</div><div class="line">    inputs.push(data.trim());</div><div class="line">    if (K == inputs.length) &#123; //</div><div class="line">        // 处理</div><div class="line">        var result = deal(inputs);</div><div class="line"></div><div class="line">        // 输出结果</div><div class="line">        console.log(result);</div><div class="line">        // 清0</div><div class="line">        inputs.length = 0;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">//调整函数</div><div class="line">function headAdjust(elements, pos, len)&#123;</div><div class="line">  //将当前节点值进行保存</div><div class="line">  var swap = elements[pos];</div><div class="line"></div><div class="line">  //定位到当前节点的左边的子节点</div><div class="line">  var child = pos * 2 + 1;</div><div class="line"></div><div class="line">  //递归，直至没有子节点为止</div><div class="line">  while(child &lt; len)&#123;</div><div class="line">    //如果当前节点有右边的子节点，并且右子节点较大的场合，采用右子节点</div><div class="line">    //和当前节点进行比较</div><div class="line">    if(child + 1 &lt; len &amp;&amp; elements[child] &lt; elements[child + 1])&#123;</div><div class="line">      child += 1;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    //比较当前节点和最大的子节点，小于则进行值交换，交换后将当前节点定位</div><div class="line">    //于子节点上</div><div class="line">    if(elements[pos] &lt; elements[child])&#123;</div><div class="line">      elements[pos] = elements[child];</div><div class="line">      pos = child;</div><div class="line">      child = pos * 2 + 1;</div><div class="line">    &#125;</div><div class="line">    else&#123;console.log(elements); </div><div class="line">      break;</div><div class="line">    &#125;</div><div class="line">    elements[pos] = swap;console.log(elements); </div><div class="line"> &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//构建堆</div><div class="line">function buildHeap(elements)&#123;</div><div class="line">  //从最后一个拥有子节点的节点开始，将该节点连同其子节点进行比较，</div><div class="line">  //将最大的数交换与该节点,交换后，再依次向前节点进行相同交换处理，</div><div class="line">  //直至构建出大顶堆（升序为大顶，降序为小顶）</div><div class="line">  for(var i=elements.length/2; i&gt;=0; i--)&#123;</div><div class="line">    headAdjust(elements, i, elements.length);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function sort(elements)&#123;</div><div class="line">  //构建堆</div><div class="line">  buildHeap(elements);</div><div class="line"></div><div class="line">  //从数列的尾部开始进行调整</div><div class="line">  for(var i=elements.length-1; i&gt;0; i--)&#123;</div><div class="line">    //堆顶永远是最大元素，故，将堆顶和尾部元素交换，将</div><div class="line">    //最大元素保存于尾部，并且不参与后面的调整</div><div class="line">    var swap = elements[i];</div><div class="line">    elements[i] = elements[0];</div><div class="line">    elements[0] = swap;</div><div class="line"></div><div class="line">    //进行调整，将最大）元素调整至堆顶</div><div class="line">    headAdjust(elements, 0, i);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="手写事件代理"><a href="#手写事件代理" class="headerlink" title="手写事件代理"></a>手写事件代理</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">function delegateEvent(interfaceEle, selector, type, fn) &#123;</div><div class="line">    if(interfaceEle.addEventListener)&#123;</div><div class="line">    interfaceEle.addEventListener(type, eventfn);</div><div class="line">    &#125;else&#123;</div><div class="line">    interfaceEle.attachEvent(&quot;on&quot;+type, eventfn);</div><div class="line">    &#125;</div><div class="line">     </div><div class="line">    function eventfn(e)&#123;</div><div class="line">    var e = e || window.event;    </div><div class="line">    var target = e.target || e.srcElement;</div><div class="line">    if (matchSelector(target, selector)) &#123;</div><div class="line">            if(fn) &#123;</div><div class="line">                fn.call(target, e);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">/**</div><div class="line"> * only support #id, tagName, .className</div><div class="line"> * and it&apos;s simple single, no combination</div><div class="line"> */</div><div class="line">function matchSelector(ele, selector) &#123;</div><div class="line">    // if use id</div><div class="line">    if (selector.charAt(0) === &quot;#&quot;) &#123;</div><div class="line">        return ele.id === selector.slice(1);</div><div class="line">    &#125;</div><div class="line">    // if use class</div><div class="line">    if (selector.charAt(0) === &quot;.&quot;) &#123;</div><div class="line">        return (&quot; &quot; + ele.className + &quot; &quot;).indexOf(&quot; &quot; + selector.slice(1) + &quot; &quot;) != -1;</div><div class="line">    &#125;</div><div class="line">    // if use tagName</div><div class="line">    return ele.tagName.toLowerCase() === selector.toLowerCase();</div><div class="line">&#125;</div><div class="line">//调用</div><div class="line">var odiv = document.getElementById(&quot;oDiv&quot;);</div><div class="line">delegateEvent(odiv,&quot;a&quot;,&quot;click&quot;,function()&#123;</div><div class="line">    alert(&quot;1&quot;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="手写深复制（兼容数组和对象"><a href="#手写深复制（兼容数组和对象" class="headerlink" title="手写深复制（兼容数组和对象)"></a>手写深复制（兼容数组和对象)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">function clone(obj) &#123;</div><div class="line">    var copy;</div><div class="line"></div><div class="line">    // Handle the 3 simple types, and null or undefined</div><div class="line">    if (null == obj || &quot;object&quot; != typeof obj) return obj;</div><div class="line"></div><div class="line">    // Handle Date</div><div class="line">    if (obj instanceof Date) &#123;</div><div class="line">        copy = new Date();</div><div class="line">        copy.setTime(obj.getTime());</div><div class="line">        return copy;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // Handle Array</div><div class="line">    if (obj instanceof Array) &#123;</div><div class="line">        copy = [];</div><div class="line">        for (var i = 0, len = obj.length; i &lt; len; i++) &#123;</div><div class="line">            copy[i] = clone(obj[i]);</div><div class="line">        &#125;</div><div class="line">        return copy;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // Handle Object</div><div class="line">    if (obj instanceof Object) &#123;</div><div class="line">        copy = &#123;&#125;;</div><div class="line">        for (var attr in obj) &#123;</div><div class="line">            if (obj.hasOwnProperty(attr)) copy[attr] = clone(obj[attr]);</div><div class="line">        &#125;</div><div class="line">        return copy;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    throw new Error(&quot;Unable to copy obj! Its type isn&apos;t supported.&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="待更新——完善注释"><a href="#待更新——完善注释" class="headerlink" title="待更新——完善注释"></a>待更新——完善注释</h3>
+	
+	
+	
+	
+</div>
+				
+				
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+        <div class="ds-thread" 
+            data-thread-key="2017/03/24/算法 手写/" 
+            data-url="http://yoursite.com/2017/03/24/算法 手写/"
+            data-title="javascript常见手写代码"></div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    <!-- Prev Nav -->
+    
+        <a href="/2017/03/26/使用OJ系统(如牛克网)在线编程javascript的输入多行写法/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/03/10/KOA中间件源码解析/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+        </div>
+    </div>
+
+				
+				
+					<!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay "></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored  sidebar-fixed-left" role="navigation">
+	<div id="sidebar-main">
+	    <!-- Sidebar Header -->
+		<div class="sidebar-header header-cover" style="background-image: url(/img/bg.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+    <i class="material-icons">clear_all</i>
+    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/logo.png" alt="高翔's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        gaoxiangno123@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+		<!-- Sidebar Navigation  -->
+		<ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+			
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+						<i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+             主页
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+<!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+-->
+
+
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             归档
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">5</span></a>
+        </ul>
+    </li>
+
+    <!-- Categories  -->
+    
+
+    <!-- Divider -->
+    <li class="divider"></li>
+
+
+    <!-- Pages  -->
+	
+		<li>
+			<a href="/about/" title="关于我">
+				关于我
+			</a>
+		</li>
+	
+		<li>
+			<a href="/gallery/" title="摄影集">
+				摄影集
+			</a>
+		</li>
+	
+
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+             文章总数
+             <span class="sidebar-badge">20</span>
+        </a>
+    </li>
+</ul>
+
+
+		<!-- Sidebar Divider -->
+		<div class="sidebar-divider"></div>
+
+		<!-- Sidebar Footer -->
+		<!-- 
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :) 
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+	<div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+		主题 - Material
+		<span class="sidebar-badge badge-circle">i</span>
+	</div>
+</a>
+
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+		sidebar.help
+		<span class="mdl-button__ripple-container">
+			<span class="mdl-ripple"></span>
+		</span>
+	</div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+	</div>
+    
+    <!-- Sidebar Sponsor -->
+    
+
+
+</aside>
+
+				
+				
+				
+					<!-- Footer Top Button -->
+					<div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+				
+				
+				<!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+	
+	
+		<!-- Paradox Footer Left Section -->
+		<div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+    
+
+    <!-- Facebook -->
+    
+    
+
+    <!-- Google + -->
+    
+    
+
+    <!-- Weibo -->
+    
+    <a href="http://weibo.com/gaoxiangz/home" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-weibo.png);">
+        <span class="visuallyhidden">Weibo</span>
+    </button></a>
+    
+
+    <!-- Instagram -->
+    
+    
+
+    <!-- Tumblr -->
+    
+    
+
+    <!-- Github -->
+    
+    <a href="https://github.com/gaoxianglyx" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+        <span class="visuallyhidden">Github</span>
+    </button></a>
+    
+
+    <!-- LinkedIn -->
+    
+    
+</div>
+
+
+		<!--Copyright-->
+		<div id="copyright">Copyright&nbsp;©&nbsp;<script type="text/javascript">var fd = new Date();document.write(fd.getFullYear());</script>&nbsp;高翔的博客</div>
+
+		<!-- Paradox Footer Right Section -->
+
+		<!-- 
+		I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+		It will not impact the appearance and can give developers a lot of support :)
+
+		很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+		它不会影响美观并可以给开发者很大的支持。 :) 
+		-->
+
+		<div class="mdl-mini-footer--right-section">
+			<div>
+				<div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+				<div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+			</div>
+		</div>
+	
+    
+</footer>
+                
+				<!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+    
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+	<script src="/js/smoothscroll.js"></script>
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"gaoxianglyx"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'https://duoshuo.open.zycao.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共 js 代码 end -->
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $(".post-toc-wrap").parent(".mdl-menu__container").css("position", "fixed");
+    });
+</script>
+
+<!-- MathJax Load-->
+
+            </main>
+        </div>
+		
+    </body>
+		
+	
+</html>
