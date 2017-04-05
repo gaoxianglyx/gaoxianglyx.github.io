@@ -6,7 +6,7 @@
     <meta name="google-site-verification" content="0OxCTjCTjNo4u25z69rIPUtJC62U7PFEda1bLrF2m6A" />
     
     <title>
-        我的第一篇文章 | 高翔的博客
+        KOA中间件源码解析 | 高翔的博客
     </title>
     
     <!-- Favicons -->
@@ -42,7 +42,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="我的第一篇文章 | 高翔的博客">
+    <meta property="og:title" content="KOA中间件源码解析 | 高翔的博客">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -212,7 +212,7 @@
 	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 		for="post-toc-trigger-btn">
 			
-			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#KOA中间件的执行顺序"><span class="post-toc-number">1.</span> <span class="post-toc-text">KOA中间件的执行顺序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现原理"><span class="post-toc-number">2.</span> <span class="post-toc-text">实现原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#compose"><span class="post-toc-number">3.</span> <span class="post-toc-text">compose</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CO"><span class="post-toc-number">4.</span> <span class="post-toc-text">CO</span></a></li></ol>
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
@@ -246,7 +246,7 @@
 		
 	
         <p class="article-headline-p">
-            我的第一篇文章
+            KOA中间件源码解析
         </p>
     </div>
 
@@ -264,7 +264,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>高翔</strong>
-        <span>1月 03, 2017</span>
+        <span>4月 05, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -289,7 +289,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        
+        <a class="post_tag-link" href="/tags/KOA/">KOA</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/generator/">generator</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/源码/">源码</a>
     </ul>
     
 
@@ -317,7 +317,7 @@
     
     <!-- Share Weibo -->
     
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=我的第一篇文章&url=http://yoursite.com//2017/01/03/我的第一篇文章/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=KOA中间件源码解析&url=http://yoursite.com//2017/04/05/KOA中间件源码浅析/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -335,7 +335,7 @@
 
     <!-- Share QQ -->
     
-    <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=高翔的博客&title=我的第一篇文章&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/01/03/我的第一篇文章/index.html" target="_blank">
+    <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=高翔的博客&title=KOA中间件源码解析&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/04/05/KOA中间件源码浅析/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 QQ
         </li>
@@ -353,13 +353,28 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<p>tags:  </p>
+		<p><strong>告别回调噩梦，从这里开始</strong><br><a id="more"></a></p>
+<h2 id="KOA中间件的执行顺序"><a href="#KOA中间件的执行顺序" class="headerlink" title="KOA中间件的执行顺序"></a>KOA中间件的执行顺序</h2><p>请看下面来自官网的代码和执行顺序：</p>
+<p><img src="http://www.cailidan.cn/images/middleware.gif" alt="image"></p>
+<p>以上代码的实现如果用回调函数来实现，无疑是一场噩梦，而KOA却以十分优雅的方式实现了如下图洋葱图一般的回调：</p>
+<p><img src="http://ww1.sinaimg.cn/large/96ea1c33gy1fdi1mk84dwj20d20bf75s" alt="image"></p>
+<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><blockquote>
+<p>核心是利用ES6的新特性：generator</p>
+</blockquote>
+<p><strong>具体实现是利用KOA的两个NIUBI轰轰的模块：compose和CO</strong></p>
+<h2 id="compose"><a href="#compose" class="headerlink" title="compose"></a>compose</h2><p>compose模块，用于将所有generator中间件串联起来，基本上就是将后一个generator赋给前一个generator的next参数。也就是在yield后面调用下一个generate函数。<br>大致原理：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">// 中间件 a</div><div class="line">function* a(next) &#123;</div><div class="line">  yield 1;</div><div class="line"></div><div class="line">  // 执行下一个中间件</div><div class="line">  yield* next;</div><div class="line"></div><div class="line">  yield &apos;继续执行A中间件&apos;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 中间件 b</div><div class="line">function* b(next) &#123;</div><div class="line">  yield 2;</div><div class="line">  yield 3;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">var next = function* ()&#123;&#125;;</div><div class="line">var i = [a, b].length;</div><div class="line"></div><div class="line">// 通过next首尾相连</div><div class="line">while(i--) &#123;</div><div class="line">  next = [a, b][i].call(null, next);</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 包裹第一个middleware</div><div class="line">function* start(ne) &#123;</div><div class="line">  return yield* ne;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">// 输出</div><div class="line">console.log(start(next).next());</div><div class="line">console.log(start(next).next());</div><div class="line">console.log(start(next).next());</div><div class="line">console.log(start(next).next());</div><div class="line">输出结果：</div><div class="line"></div><div class="line">➜  a-lab ./a</div><div class="line">&#123; value: 1, done: false &#125;</div><div class="line">&#123; value: 2, done: false &#125;</div><div class="line">&#123; value: 3, done: false &#125;</div><div class="line">&#123; value: &apos;继续执行A中间件&apos;, done: false &#125;</div></pre></td></tr></table></figure>
+<p>这里可以看出来：compose取中间件是做i-循环的，但是由于一开始是吧中间件推入栈中，顺序为FILO，所有顺序是没问题的。  </p>
+<blockquote>
+<p>但是：那个负责把所有中间件串起来的next其实本身也是一个generator，但是，如果在Generater函数内部，调用另一个Generator函数，默认情况下是没有效果的。</p>
+</blockquote>
+<p>所以这时候就轮到我们的CO模块出场啦</p>
+<h2 id="CO"><a href="#CO" class="headerlink" title="CO"></a>CO</h2><p>CO模块：CO模块便通过递归使得嵌套好的generate依次自动执行（包装为Promise对象）<br>大致源码实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function run(gen)&#123;</div><div class="line">  var g;</div><div class="line">  if (typeof gen.next === &apos;function&apos;) &#123;</div><div class="line">    g = gen;</div><div class="line">  &#125; else &#123;</div><div class="line">    g = gen();</div><div class="line">  &#125;</div><div class="line">  function next()&#123;</div><div class="line">    var tmp = g.next();</div><div class="line">    //如果tmp.done为true，那么证明generator执行结束，返回。if (tmp.done) &#123;</div><div class="line">      return;</div><div class="line">    &#125; elseif (typeof g.next === &apos;function&apos;) &#123;</div><div class="line">      run(tmp.value);</div><div class="line">      next();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  next();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <ul>
-<li>Android</li>
-<li>Mac</li>
+<li>co帮我们”自动管理”generator的next，并根据调用返回的value做出不同的响应，这个响应是通过toPromise方法进行的</li>
+<li>如果遇到另外一个generator，co会继续调用自己，这就是为什么我们不需要写yield* next(使得next自执行)的原因，而只要写yield next  </li>
+<li>而且CO模块会判断执行完所有的中间件，才会对res进行操作，所以在中间件中我们可以随意修改res，不会出现express中的路由已经终止请求-响应循环。</li>
 </ul>
-<hr>
-<p>##测试，尝试发布自己的第一篇文章 ##<br><a id="more"></a><br>哈哈哈哈哈哈</p>
 
 	
 	
@@ -388,9 +403,9 @@
 <div id="comments">
     <!-- 多说评论框 start -->
         <div class="ds-thread" 
-            data-thread-key="2017/01/03/我的第一篇文章/" 
-            data-url="http://yoursite.com/2017/01/03/我的第一篇文章/"
-            data-title="我的第一篇文章"></div>
+            data-thread-key="2017/04/05/KOA中间件源码浅析/" 
+            data-url="http://yoursite.com/2017/04/05/KOA中间件源码浅析/"
+            data-title="KOA中间件源码解析"></div>
     <!-- 多说评论框 end -->
 </div>
 
@@ -404,21 +419,13 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2017/01/04/搭建github博客步骤，超简便/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/01/03/hello-world/" id="post_nav-older" class="next-content">
+        <a href="/2017/03/26/使用OJ系统(如牛克网)在线编程javascript的输入多行写法/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
